@@ -36,8 +36,10 @@ const li = document.createElement('li');
 li.textContent = 'One';
 const li2 = document.createElement('li');
 li2.textContent = 'Two';
-const li3 = document.createElement('li');
-li3.textContent = 'three';
+
+const li3 = li2.cloneNode(true);
+li3.textContent = 'Three'
+
 const li4 = document.createElement('li');
 li4.textContent = 'Four';
 const li5 = document.createElement('li');
@@ -51,5 +53,10 @@ ul.appendChild(li4);
 ul.insertAdjacentElement('afterbegin', li);
 ul.insertAdjacentElement('beforeend', li5);
 
-document.body.appendChild(ul);
+
+
+document.body.insertAdjacentElement('afterbegin', ul)
+
+// document.body.appendChild(ul);
+
 
