@@ -114,6 +114,10 @@ function generatePlayerCard(name, age, height){
   return myHTML;
 }
 
+function removeThis(){
+  cardOne.addEventListener('click', console.log('card one clicked'))
+}
+
 const cardOne = generatePlayerCard('Westopher', 28, '6 feet');
 const cardTwo = generatePlayerCard('Wes', 21, '7 feet');
 const cardThree = generatePlayerCard('Bos', 12, '2 feet');
