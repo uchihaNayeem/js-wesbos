@@ -64,6 +64,13 @@ console.log(buyButtons);
 function catchWhatBrowserGives(element){
   console.dir(element);
 }
-buyButtons.forEach(buttons => console.log(buttons));
+
+function iAmClicked(){
+  console.log(`clicked`);
+}
+
+buyButtons.forEach(buttons => console.dir(buttons));
 
 buyButtons.forEach(buttons => buttons.addEventListener('click', catchWhatBrowserGives));
+
+buyButtons.forEach(buttons => buttons.addEventListener('click', iAmClicked));
