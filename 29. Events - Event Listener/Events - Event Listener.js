@@ -82,6 +82,9 @@ const buyButton = document.querySelectorAll('.buy');
 
 function handleClick(event){
     console.log(event);
+    // perseFloat() keeps the decimal, parseInt() doesnot keep decimal
+    console.log( parseFloat( event.target.dataset.price)); // dataset gives us all the data. 'dataset.price' give the spesific one
+    console.log( parseInt( event.target.dataset.price));
 }
 
 buyButton.forEach(buyButton =>{
