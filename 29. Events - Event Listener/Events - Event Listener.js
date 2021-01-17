@@ -81,15 +81,21 @@
 const buyButton = document.querySelectorAll('.buy');
 
 function handleClick(event){
-  const button = event.target;
-  console.log(`sticking in variales and getting access to its props: " ${button.textContent} "`);
+  // const button = event.target;
+  // console.log(`sticking in variales and getting access to its props: " ${button.textContent} "`);
 
-    console.log(event);
-    console.dir(event.target); // when we get the target we can access anything we want
-    console.log(event.target.className);
-    // perseFloat() keeps the decimal, parseInt() doesnot keep decimal
-    console.log( parseFloat( event.target.dataset.price)); // dataset gives us all the data. 'dataset.price' give the spesific one
-    console.log( parseInt( event.target.dataset.price));
+  //   console.log(event);
+  //   console.dir(event.target); // when we get the target we can access anything we want
+  //   console.log(event.target.className);
+  //   // perseFloat() keeps the decimal, parseInt() doesnot keep decimal
+  //   console.log( parseFloat( event.target.dataset.price)); // dataset gives us all the data. 'dataset.price' give the spesific one
+  //   console.log( parseInt( event.target.dataset.price));
+
+    //target and current Target
+    console.log(event.target);
+    console.log(event.currentTarget);
+    console.log(event.target === event.currentTarget);
+
 }
 
 buyButton.forEach(buyButton =>{
