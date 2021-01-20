@@ -103,3 +103,76 @@ buyButton.forEach(buyButton =>{
 })
 
 
+
+
+
+
+
+
+
+
+
+// practiced again 
+
+// video no 30 Events - targets, bubbling, propagation and capture
+
+/*
+  #Create a 10 buttons 
+  # Capture all the button in a variable 'eventBtn' by className
+  # Make a function 'handleClick' with a parameter called 'event'
+  # Run forEach method to eventBtn to get access to each button.
+  # Inside of forEach method, make a function with 'btn' parameter
+  # Note: 'btn' will contain each element 
+  # Add eventListener to 'btn'
+  # make a function inside that even listerner to and give a parameter 'event'
+  # Note:this 'event' will get the data passed my browser
+  # 
+
+*/
+
+const eventBtn = document.querySelectorAll('.buyEvent');
+
+function handleClick(event){
+  // console.dir(event);
+
+  // console.log(parseFloat(event.target.dataset.price));
+  // console.log(parseInt(event.target.dataset.price));
+
+  console.log(event.target);
+  console.log(event.currentTarget);
+  console.log(event.target === event.currentTarget);
+  event.stopPropagation();
+}
+
+
+eventBtn.forEach(function (btn){
+  // console.log(btn); //got every button in 'btn'
+  btn.addEventListener('click', handleClick);
+})
+
+
+
+window.addEventListener('click', function(event){
+  console.log('i am Window');
+  console.log(event.target);
+},
+{ capture: true })
+
+
+// const photoEl = document.querySelector(".photo");
+
+// photoEl.addEventListener("mousemove", (e) => {
+//   console.count(e.currentTarget);
+//   console.log(this);
+// });
+
+
+
+const photoEl = document.querySelector(".photo");
+
+photoEl.addEventListener("mouseenter", (e) => {
+  console.log(e.currentTarget);
+  console.log(this);
+});
+
+
