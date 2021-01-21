@@ -13,6 +13,42 @@ wes.addEventListener('click', function(event){
   }
 })
 
+//forms Events
+
+const signupForm = document.querySelector('[name="signup"]');
+
+signupForm.addEventListener('submit',function(event){
+  event.preventDefault();
+  console.log(event.currentTarget.name.value);
+  console.log(event.currentTarget.email);
+  const name = event.currentTarget.name.value;
+  if(name.includes('chad')){
+    event.preventDefault();
+    alert('you`re not invited')
+  }
+
+})
+
+// 'keyup'
+// 'keydown'
+// 'focus'
+// 'blur'
+
+function logEvent(event) {
+  console.log(event.type);
+  console.log(event.currentTarget.value);
+}
+signupForm.name.addEventListener('keyup', logEvent);
+signupForm.name.addEventListener('keydown', logEvent);
+signupForm.name.addEventListener('focus', logEvent);
+signupForm.name.addEventListener('blur', logEvent);
+
+
+
+
+
+
+
 
 
 //link is pass
