@@ -13,3 +13,20 @@ wes.addEventListener('click', function(event){
   }
 })
 
+
+
+//link is pass
+
+const git = document.querySelector('.git');
+git.addEventListener('click', function(event){ 
+  const givePass = prompt('Password please???');
+  
+  // event.preventDefault();
+  // if(givePass === 'nayeem'){
+  //   window.location = event.target.href;
+  // }
+
+  if(givePass !== 'nayeem'){
+    event.preventDefault();
+  }
+})
