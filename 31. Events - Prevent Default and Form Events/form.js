@@ -13,26 +13,31 @@ wes.addEventListener('click', function(event){
   }
 })
 
-//forms Events
+
 
 const signupForm = document.querySelector('[name="signup"]');
+//akhane form take attribute diye select korsi, akhane oi form er vitorer element a access kora jacche, karon HTML input a [ name="name" ] use kora hoise.
 
-signupForm.addEventListener('submit',function(event){
-  event.preventDefault();
-  console.log(event.currentTarget.name.value);
-  console.log(event.currentTarget.email);
+// event er 'currentTarget' diyeo access kora jacche'. [ name="name" ] thakar karone
+
+// console.log(signupForm.name); // 'name' is the value of 'name attribute' in input tag
+// console.log(signupForm.email);
+// console.log(signupForm.agree);
+
+
+
+
+signupForm.addEventListener('submit', function (event){
+  event.preventDefault()
+  color = 'red';
   const name = event.currentTarget.name.value;
-  if(name.includes('chad')){
-    event.preventDefault();
-    alert('you`re not invited')
+  console.dir(event.currentTarget.email.value); 
+  if(name.includes('kamala')){ // include is not case sensitive
+    alert(`You are not allowed`)
   }
+  // console.log(event.currentTarget.email);
+});
 
-})
-
-// 'keyup'
-// 'keydown'
-// 'focus'
-// 'blur'
 
 function logEvent(event) {
   console.log(event.type);
@@ -42,6 +47,10 @@ signupForm.name.addEventListener('keyup', logEvent);
 signupForm.name.addEventListener('keydown', logEvent);
 signupForm.name.addEventListener('focus', logEvent);
 signupForm.name.addEventListener('blur', logEvent);
+// 'keyup'
+// 'keydown'
+// 'focus'
+// 'blur'
 
 
 
@@ -51,12 +60,18 @@ signupForm.name.addEventListener('blur', logEvent);
 
 
 
-//link is pass
+
+
+
+
+
+
+//link need password, by ME 
 
 const git = document.querySelector('.git');
 git.addEventListener('click', function(event){ 
   const givePass = prompt('Password please???');
-  
+
   // event.preventDefault();
   // if(givePass === 'nayeem'){
   //   window.location = event.target.href;
