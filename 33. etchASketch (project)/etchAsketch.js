@@ -42,7 +42,7 @@ function draw({key}){
     y -= 10;
   }
   if(key === 'ArrowDown'){
-    y += 10;
+    y += 100;
   }
 
   ctx.lineCap = 'round';
@@ -56,4 +56,6 @@ function draw({key}){
 }
 
 
+
 window.addEventListener('keydown', handleArrow);
+canvas.classList.add('shake');
