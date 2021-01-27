@@ -15,3 +15,16 @@ ctx.lineCap = 'round';
 ctx.lineJoin = 'round';
 ctx.lineWidth = 30;
 
+ctx.beginPath();
+ctx.moveTo(x, y);
+ctx.lineTo(x, y);
+ctx.stroke();
+
+function handleArrow(e){
+  if(e.key.includes('Arrow')){
+    console.log(e.key);
+    e.preventDefault();
+  }
+}
+
+window.addEventListener('keydown', handleArrow);
