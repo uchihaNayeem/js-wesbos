@@ -31,21 +31,28 @@ function handleArrow(e){
 
 function draw({key}){
   console.log({key});
+  console.log(x, y);
   if(key === 'ArrowLeft'){
     x -= 10;
   }
   if(key === 'ArrowRight'){
     x += 10;
   }
- 
+  if(key === 'ArrowUp'){
+    y -= 10;
+  }
+  if(key === 'ArrowDown'){
+    y += 10;
+  }
+
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
   ctx.lineWidth = 30;
-  
   ctx.beginPath();
   ctx.moveTo(x, y);
   ctx.lineTo(x, y);
   ctx.stroke();
+
 }
 
 
