@@ -22,9 +22,31 @@ ctx.stroke();
 
 function handleArrow(e){
   if(e.key.includes('Arrow')){
+    draw({key: e.key})
     console.log(e.key);
     e.preventDefault();
+
   }
 }
+
+function draw({key}){
+  console.log({key});
+  if(key === 'ArrowLeft'){
+    x -= 10;
+  }
+  if(key === 'ArrowRight'){
+    x += 10;
+  }
+ 
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+  ctx.lineWidth = 30;
+  
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+}
+
 
 window.addEventListener('keydown', handleArrow);
