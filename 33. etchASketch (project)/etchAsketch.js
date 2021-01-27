@@ -32,6 +32,7 @@ function handleArrow(e){
 function draw({key}){
   console.log({key});
   console.log(x, y);
+
   if(key === 'ArrowLeft'){
     x -= 10;
   }
@@ -42,7 +43,7 @@ function draw({key}){
     y -= 10;
   }
   if(key === 'ArrowDown'){
-    y += 100;
+    y += 10;
   }
 
   ctx.lineCap = 'round';
@@ -55,7 +56,20 @@ function draw({key}){
 
 }
 
+ function clearCanvas() {
+  canvas.classList.add('shake');
+  ctx.clearRect(0, 0, width, height);
+  canvas.addEventListener(
+    'animationend',
+    function() {
+      console.log('Done the shake!');
+      canvas.classList.remove('shake');
+    },
+    { once: true }
+  );
+}
+
 
 
 window.addEventListener('keydown', handleArrow);
-canvas.classList.add('shake');
+shakeBtn.addEventListener('click', clearCanvas)
