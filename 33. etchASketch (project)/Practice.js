@@ -52,6 +52,15 @@ function handlerArrow(e){
     e.preventDefault();
 }
 
+function clearCanvas(){
+  ctx.clearRect(0, 0, width, height)
+  canvas.classList.add('shake');
+  console.log(`added`);
+  canvas.addEventListener('animationend', function(){
+    canvas.classList.remove('shake');
+  },{once: true})
+}
 
 
 window.addEventListener('keydown', handlerArrow)
+shakeBtn.addEventListener('click', clearCanvas)
