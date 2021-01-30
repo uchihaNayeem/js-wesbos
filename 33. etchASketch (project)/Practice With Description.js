@@ -72,7 +72,8 @@ function draw({key}) {
 
 //08. handle Arrow
 function handleArrow(e){
-  draw({key: e.key})
+  draw({key: e.key}); // 'e' er 'e.key' just akta property te rakhsi, oitake draw function a destucturing kore 'capture' korlam
+
   if(e.key.includes('Arrow')){
     // console.log(e.key);
     e.preventDefault();
