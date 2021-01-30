@@ -44,20 +44,24 @@ function draw({key}) {
   ctx.beginPath();
   ctx.moveTo(x, y);
 
-  switch(key){
-    case 'ArrowUp':
-      y -= 10;
+  switch(key){    //key gulake value hishebe nise
+    case 'ArrowUp': // 'ArrowUp' kina check kortese
+      y -= 10; // match korle 'y' theke 10 komache
       break;
+
     case 'ArrowDown':
       y += 10;
       break;
+
     case 'ArrowRight':
       x += 10;
       break;
+
     case 'ArrowLeft':
       x -= 10;
       break;
-    default:
+
+    default: //must default dite hoy
       break;
   }
 
