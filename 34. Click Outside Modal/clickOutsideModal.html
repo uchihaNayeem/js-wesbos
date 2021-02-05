@@ -9,9 +9,100 @@
 </head>
 
 <body>
+  <div class="cards">
+    <div class="card" data-description="Wes is cool">
+      <img src="https://picsum.photos/200?random=1" alt="Wes Bos">
+      <h2>Wes Bos</h2>
+      <button>Learn more →</button>
+    </div>
+    <div class="card" data-description="Scott is neat!">
+      <img src="https://picsum.photos/200?random=2" alt="Wes Bos">
+      <h2>Scott Tolinski</h2>
+      <button>Learn more →</button>
+    </div>
+    <div class="card" data-description="Kait is beautiful!">
+      <img src="https://picsum.photos/200?random=3" alt="Wes Bos">
+      <h2>Kait Bos</h2>
+      <button>Learn more →</button>
+    </div>
+    <div class="card" data-description="Snickers is a dog!">
+      <img src="https://picsum.photos/200?random=4" alt="Wes Bos">
+      <h2>Snickers the dog</h2>
+      <button>Learn more →</button>
+    </div>
 
- 
- <script src="./clickOutsideModal.js"></script>
+  </div>
+
+  <div class="modal-outer">
+    <div class="modal-inner">
+      <p>testing inner modal</p>
+
+    </div>
+  </div>
+
+  <style>
+   .cards{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+     grid-gap: 20px;
+     padding: 20px;
+   }
+    .card img{
+      width:100%;
+    }
+
+    .card{
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .card h2{
+      color: black;
+    }
+
+    /* modal Outer */
+    .modal-outer{
+      display: grid;
+      background: hsla(50, 100%, 50%, 0.7);
+      position: fixed;
+      height: 100vh;
+      width: 100vw;
+      left: 0;
+      top: 0;
+      /* child 'modal-inner centering' */
+      justify-content: center;
+      align-items: center;
+      /* Hide this modal until we need it */
+      pointer-events: none;
+      opacity: 0;
+
+    }
+    .modal-outer img{
+      width: 100%;
+    }
+
+    .modal-outer.open{
+      opacity: 1;
+      pointer-events: all;
+      transition: opacity 0.4s;
+
+    }
+
+    .modal-inner{
+      max-width: 600px;
+      min-width: 400px;
+      padding: 2rem;
+      border-radius: 2px;
+      min-height: 200px;
+      background: white;
+      
+    
+    }
+
+  </style>
+  <script src="./clickOutsideModal.js"></script>
 </body>
+
 
 </html>
