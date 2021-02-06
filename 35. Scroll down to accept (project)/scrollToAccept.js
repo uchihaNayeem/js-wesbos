@@ -7,7 +7,8 @@ function obCallback(payload){
   if(payload[0].intersectionRatio === 1){
     button.disabled = false;
     console.log(`i am done`);
-    ob.unobserve(watch)
+    // ob.unobserve(watch)
+    ob.unobserve(terms.lastElementChild)
   }
 }
 
@@ -17,4 +18,6 @@ const ob = new IntersectionObserver(obCallback, {
 
 });
 
-ob.observe(watch);
+// console.log(terms.lastElementChild);
+ob.observe(terms.lastElementChild);
+// ob.observe(watch);
