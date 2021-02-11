@@ -16,9 +16,41 @@
 
 
   <script>
-    if(10 > 2){
-      console.log(`Im really aWESsome`);
+   if (10 > 2) {
+      console.log('Pipes');
     }
+
+/*  //METHOD 1
+    function slugify(sen, low){
+      if(low){
+       return sen.replace(/\s/g, '=').toLowerCase();
+      } else{
+        return sen.replace(/\s/g, '-')
+      }
+    }
+*/
+
+    function slugify(sen, low){
+      let slug = sen.replace(/\s/g, '-')
+      if(low){
+       return slug = slug.toLowerCase();
+      }else{
+        return slug
+      }
+    }
+
+
+    let name = 'nayeem';
+    let lastName = 'Uddin';
+    let myName = `asKat`
+
+    if(lastName.includes(`x`) || (name.includes(`em`) && myName)){
+      console.log(`olodama`);
+    }else{
+      console.log(`doesnt include`);
+    }
+
+
   </script>
 </body>
 
