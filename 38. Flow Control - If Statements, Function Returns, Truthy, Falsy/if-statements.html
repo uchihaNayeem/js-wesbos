@@ -89,9 +89,43 @@
       console.log(`car model doesn't exist`);
     }
 
+    //CHECKING for index in a string 
     const sentence = 'The quick brown fox jumps over the lazy dog.';
     const index = 4;
-    console.log(`The character at index ${index} is ${sentence.charAt(index)}`); // expected output: "The character at index 4 is q"
+    console.log(`The character at index ${index} is ${sentence.charAt(index)}`);
+
+
+    /* this is from colt module 3 [How to Model Data Efficiently]*/
+    
+    //========== Strings =============
+    //*simple string examples
+    let firstName = 'Nayeem';
+    let lastNaame = "Uddin"
+    let fullName = firstName + ` ` + lastNaame;
+    console.log(fullName);
+
+    //*String are indexed
+    let randomStr = `this world has it's own way, '     .          .     '`
+    console.log(randomStr.length); // 53
+
+    /*
+    String Method: `.length` vs `[ indexNo ]`
+    *length count starts from 1
+    *index is available from 0
+    */
+    let olodama = 'he';
+    console.log(olodama.length); //ans: 2
+    console.log(olodama[2]); //ans: undefined
+    console.log(olodama[0] + olodama[1]); //ans: he
+
+
+
+
+
+
+
+
+
 
 
   </script>
