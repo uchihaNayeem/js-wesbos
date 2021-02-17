@@ -51,39 +51,41 @@
     }
 
 
-    let carNumbers = 10;
-    console.log(carNumbers);
+    //method attached direct to the string
+    if('nayeem'.includes('x')){
+      console.log(`dulche`);
+    }else{
+      console.log(`doesent exist`);
+    }
 
-    carNumbers += 1; // inremented by 1
-    console.log(carNumbers);
+    function add(num1 , num2=10){
+      return `This addition is ${num1 + num2}`
 
-    carNumbers++; // unary oparator
-    console.log(carNumbers);
+    }
 
+    let carModel1 = `tesla`;
+    let carModel2= `lambo`;
+    let carModel3 = `martin`;
 
-
-    const person1 = {
-      name: 'wes',
-      age: 200
-    };
-
-    const myMap = new Map();
-    // .set()
-    myMap.set('name', 'wes');
-    myMap.set(100, 'This is a number');
-    myMap.set(person1, 'Really Cool');
-    console.log(myMap);
-
-    const score = 200;
-    const prizes = new Map();
-    prizes.set(100, 'Bear');
-    prizes.set(200, 'Duck');
-    prizes.set(300, 'Car');
-    console.log(`you win a ${prizes.get(score)}`);
-
-
-
+    let hP1 = 120;
+    let hP2 = 102;
+    let hP3 = 112;
    
+    //conditions
+    condOne = carModel1.includes(`la`) && hP1 === hP2;
+    console.log(condOne);
+
+    condTwo = hP1 !==hP2 && carModel1.includes('la');
+    console.log(condTwo);
+
+    if((carModel1.includes(`la`) && hP1 === hP2) || (hP1 !==hP2 && carModel1.includes('la')) ){
+      // console.log(`you got tesla`);
+      // console.log(add(12, 100));
+      let myFunc = add(100, 100);
+      console.log(myFunc);
+    } else{
+      console.log(`car model doesn't exist`);
+    }
 
 
 
