@@ -78,15 +78,20 @@
     condTwo = hP1 !==hP2 && carModel1.includes('la');
     console.log(condTwo);
 
-    if((carModel1.includes(`la`) && hP1 === hP2) || (hP1 !==hP2 && carModel1.includes('la')) ){
+    if((carModel1.includes(`la`) && hP1 === hP2) || (hP1 !==hP2 && carModel1.includes('bo')) ){
       // console.log(`you got tesla`);
       // console.log(add(12, 100));
       let myFunc = add(100, 100);
       console.log(myFunc);
+    }else if(carModel2.indexOf(`m`) !== -1){
+      console.log(`this is lambo`);
     } else{
       console.log(`car model doesn't exist`);
     }
 
+    const sentence = 'The quick brown fox jumps over the lazy dog.';
+    const index = 4;
+    console.log(`The character at index ${index} is ${sentence.charAt(index)}`); // expected output: "The character at index 4 is q"
 
 
   </script>
