@@ -105,7 +105,7 @@
     console.log(fullName);
 
     //*String are indexed
-    let randomStr = `this world has it's own way, '     .          .     '`
+    let randomStr = `this world has it's own way, '     .      .     '%  $`
     console.log(randomStr.length); // 53
 
     /*
@@ -118,9 +118,15 @@
     console.log(olodama[2]); //ans: undefined
     console.log(olodama[0] + olodama[1]); //ans: he
 
+    /* find the last character from a string */
+    console.log(randomStr[randomStr.length - 1]);
+    // Or,
+    let lastNum = randomStr.length;
+    let lastCharStr = randomStr[lastNum - 1];
 
+    // console.clear();
 
-
+    
 
 
 
