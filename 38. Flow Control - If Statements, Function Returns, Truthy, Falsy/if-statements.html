@@ -188,7 +188,102 @@ let realName = `wes`;
 
     console.clear()
 
-    /* empty Array & Objects */
+    /*======= Truthy and Falsy ========*/
+
+    /*
+    
+  * empty array
+  * empty object
+
+  <h2>Truthy Values</h2>
+  * 1
+  * -10
+  * full string
+  * a string of "0"
+
+  <h2>Falsy Values</h2>
+  * 0
+  * undefined variable
+  * Variable set to null
+  * a variable set to `"hello" - 10` NaN
+  * empty string
+    
+    */
+
+    /* ===== Truthy Example ===== */
+    let truthy1 = 1;
+    let truthy2 = -10;
+    let truthy3 = ' '; //full string
+    let truthy4 = "0"; // 0 in a string is truthy
+
+    
+
+    if(truthy1){ //positive number
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(truthy2){ //negetive num
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(truthy3){ //full string
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(truthy4){ //0 in a string is truthy
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    // console.clear()
+    /* ===== Falsy Examples ===== */
+
+    let falsy1 = 0;
+    let falsy2; //undefined
+    let falsy3 = null; 
+    let falsy4 = `hello` - 100; // NaN
+    let falsy5 = ``; // empty String
+
+    if(falsy1){ // 0 , number 
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(falsy2){ // undefind
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(falsy3){ // null
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(falsy4){ // string - number gives NaN
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    if(falsy5){ // empty string
+      console.log(`Truthy`);
+    }else{
+      console.log(`falsy`);
+    }
+
+    // console.clear()
+
+    //empty Array & Objects
 
     let anArray = []; //truthy
     let anObject = {}; //truthy
@@ -197,7 +292,7 @@ let realName = `wes`;
     let anObjectData = {key:{name:'nayeem'}}; //truthy
 
     let anArrayNoData = [].length //falsy
-    let anObjectNoData = {}.key //falsy
+    let anObjectNoData = {}.length //falsy
 
     if(anArray){ // with or without data is truthy
       console.log(`Truthy`);
@@ -205,35 +300,59 @@ let realName = `wes`;
       console.log(`Falsy`);
     }
 
-    if(anObject){ //
+    if(anObject){ // with or without property is truthy
       console.log(`Truthy`);
     }else{
       console.log(`Falsy`);
     }
 
-    if(anArrayData){ 
+    if(anArrayData){ // array with data
       console.log(`Truthy`);
     }else{
       console.log(`Falsy`);
     }
  
-    if(anObjectData){ 
+    if(anObjectData){ // object with property
       console.log(`Truthy`);
     }else{
       console.log(`Falsy`);
     }
 
-    if(anArrayNoData){ 
+    if(anArrayNoData){ // .length property
       console.log(`Truthy`);
     }else{
       console.log(`Falsy`);
     }
 
-    if(anObjectNoData){ 
+    if(anObjectNoData){ //.length property
       console.log(`Truthy`);
     }else{
       console.log(`Falsy`);
     }
+
+   /*
+   Note: (try this in console)
+         1. [ Object.keys({}).length ] gives us 0. which is falsy.
+         2. [Object.keys({Name: 'Nayeem', lastName: `uddin`}).length] gives us 2. which is truthy.
+
+   */ 
+
+// testing my self
+    let student = {}.length;
+    let students = {
+      keys: 1, 
+      rolls: {
+        classOne: {
+          boys: [1, 2, 3],
+          girls: [4, 5, 6]
+        }, 
+        classTwo: [1, 2, 3]
+      } 
+    };
+ 
+    
+ let firstBoy = students.rolls.classOne.boys[0];
+ let firstGirl = students.rolls.classOne.girls[0];
 
 
 
