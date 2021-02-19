@@ -20,6 +20,52 @@
       console.log('Pipes');
     }
 
+//==== checking with only lessThan `<` and greaterThan `>` ====
+
+let age = 50;
+
+if (age > 70) { 
+  console.log(`in your 70's`);
+} else if (age > 60){
+  console.log(`in your 60's`);
+} else if (age > 50){
+  console.log(`in your 50's`);
+} else{
+  console.log(`none above is true`);
+}
+
+// commonly if Else will be used inside of a function
+
+function slugify(sentence, bolean) {
+  if(bolean){
+    return sentence.replace(/\s/g, '-').toLowerCase()
+  } 
+  //else
+    return sentence.replace(/\s/g, '-');
+}
+
+
+function wesSlugify(sentence, bolean){
+  let slug = sentence.replace(/\s/g, '-');
+  if(bolean){
+    // slug = slug.toLowerCase();
+    return slug.toLowerCase();
+  }
+  return slug
+}
+
+
+function anotherSlugify(sentence, bolean){
+  let slug = sentence.replace(/\s/g, '-');
+  if(bolean){
+    slug = slug.toLowerCase()
+  }
+  return `[${slug}] <-- output of our func` 
+}
+
+
+  /* ==========  My practice Below =========*/
+
 /*  //METHOD 1
     function slugify(sen, low){
       if(low){
@@ -30,7 +76,7 @@
     }
 */
 
-    function slugify(sen, low){
+    function slugifyy(sen, low){
       let slug = sen.replace(/\s/g, '-')
       if(low){
        return slug = slug.toLowerCase();
