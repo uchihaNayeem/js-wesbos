@@ -63,6 +63,36 @@ function anotherSlugify(sentence, bolean){
   return `[${slug}] <-- output of our func` 
 }
 
+/* || and && */
+
+let realName = `wes`;
+    let realLastName = `bos`;
+
+    if(realName === 'scott' || (realName === 'wes' && realLastName === 'bos')){
+      console.log(`cool name`);
+    }
+
+    if('awesome'.includes('wes')){
+      console.log(`Cool mars`);
+    }
+
+    let roverReal = 'perseverance';
+    if(roverReal.includes('sever')){
+      console.log(`mars`);
+    }
+
+    // function can also give us true/false
+    function nameRover(name){
+     return name.includes('wes');
+    }
+
+    //using a funtion return in a if else
+    if(nameRover(`wes`)){
+      console.log(`given string exist`);
+    }else{
+      console.log(`doesent exist ['wes']`);
+    }
+
 
   /* ==========  My practice Below =========*/
 
