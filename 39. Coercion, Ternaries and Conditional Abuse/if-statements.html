@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>39. Coercion, Ternaries and Conditional Abuse </title>
+  <link rel="stylesheet" href="../../base.css">
+  <!-- <link rel="stylesheet" href="./tabs-style.css"> -->
+</head>
+
+<body>
+ 
+
+
+
+
+  <script>
+   
+// commonly if Else will be used inside of a function
+
+const values = [[], {}, -10, 1, 0, '', 'full string', ' ', undefined, NaN, null, '0️⃣', '💩'];
+
+console.group('truthy or falsy values');
+values.forEach(value => {
+  if (value) {
+    console.log(value, 'is truthy');
+  } else {
+    console.log(value, 'is falsy');
+  }
+});
+console.groupEnd();
+
+ /* ===== Coercion, Ternaries and Conditional Abuse ===== */
+
+  //01. Coercion
+
+  /*
+  [
+   * Bang (!) Will do the opposite. With a bang (!) we can convert a TRUE with FALSE.
+   * With double Bang (!!) will tell us if the THING is a TRUE BOOLEAN or not.  
+   * NOTE: WITH A BANG WE CAN CHECK IF ITS A truthy or falsy.
+  ]
+  */
+
+  let marsSoilItems = []; // Truthy
+  let marsSoilItemsLen = [].length; // falsy 
+  let marsSoilItemTwo = 'Stone Lives';// Truhy
+
+  let livesOnMars = true; //Truhy
+
+
+
+  let marsZero = 0; //falsy 
+  if(!marsZero){ // with a bang I made this true forcefully 
+    console.log('! means the opposit & !! truns into a REAL boolean');
+  }else{ 
+    console.log('! removed, Yes i am falsy. ');
+  }
+
+  console.clear()
+
+
+//02 Ternary 
+
+let count = 1;
+// let word;
+// if(count === 1 || count ===0){
+//   word = 'Item';
+// }else{
+//   word = 'items';
+// }
+
+//Same code with shortHand Called Ternary.
+//(Conditions) ? (True) : (False);
+let word = (count === 1 || count === 0) ? 'item' : 'Items';
+
+let wesSentence = `you've ${count} ${word} in your cart`;
+console.log(wesSentence);
+
+
+let wesSentenceTwo = `you BROUGHT ${count} item${((count === 1 || count === 0) ? '' : 's' )} in your cart`
+console.log(wesSentenceTwo);
+
+//03 conditional ABUSE
+
+let isAdmin = true;
+
+function productCheckOne(){
+  console.log(`Check One`);
+  return true
+}
+function productCheckTwo(){
+  console.log(`Check Two`);
+  return true
+}
+function productCheckThree(){
+  console.log(`Check Three`);
+  return true
+}
+
+if(productCheckOne() && productCheckTwo() && productCheckThree()){
+  console.log(`all passed checked`);
+}else{
+  console.log(`some check failed`);
+}
+
+// ShortHand ternary 
+(productCheckOne() && productCheckTwo() && productCheckThree()) ? console.log(`passed`) : console.log(`failed`);
+
+//THIS IS conditional ABUSE. This happens quite often in react land
+isAdmin && productCheckOne();
+
+//react example {isAdmin && </AdminPanel>} 
+
+
+
+
+
+  </script>
+</body>
+
+
+</html>
