@@ -171,5 +171,144 @@ console.clear();
 
 /* 15. The Switch Statement */
 
+/*
+  [
+    * ONE Variable has Multiple Value.
+    * Task will be done BASED On Their Value
+    * structure:
+                let constantVariable = differentValue;
+                switch(constantVariable){
+                  case [differentValueONE]:
+                    [TASK];
+                    break;
+                  case [differentValueTWO]:
+                    [TASK];
+                    break;
+                  default:
+                    [does else (if any)]
+                }
+  ]
+*/
+
+let day = 5;
+
+switch (day){
+  case 1:
+    console.log(`Monday`);
+    break;
+  case 2:
+    console.log(`Tuesday`);
+    break;
+  case 3:
+    console.log(`Wednesday`);
+    break;
+  case 4:
+    console.log(`Thrusday`);
+    break;
+  case 5:
+    console.log(`Friday`);
+    break;
+  case 6:
+    console.log(`Saturday`);
+    break;
+  case 7:
+    console.log(`Sunday`);
+    break;
+  default:
+    console.log(`Invalid DAY`);
+}
+
+//another example 
+let emoji = 'sad';
+
+
+switch (emoji){
+  case 'sad': 
+    console.log(`yellow`);
+  case 'angry': 
+    console.log(`red`);
+    break;
+
+  case 'happy':
+  case 'smile':
+  case 'love':
+    console.log(`green`);
+    break;
+
+  default:
+    console.log(`wrong emoji name`);
+}
+
+// my life in diffferent year in different year
+
+function gadget(){
+  return console.log(`I used PSP`);
+}
+
+console.log(`life(year) see what it says`);
+
+function life(year){
+  switch(year){
+    case 1995:
+      console.log(`I was born`);
+      break;
+    case 2000:
+      console.log(`Class One in BN school`);
+      break;
+    case 2003:
+      console.log(`The Amazing spiderman`);
+      break;
+    case 2004:
+      console.log(`the lion king`);
+      break;
+    case 2005:
+      console.log(`Pokemon & Digimon`);
+      break;
+    case 2006:
+      console.log(`class six, MP4 players`);
+      break;
+    case 2007:
+      console.log(`class 7 `);
+      break;
+    case 2008:
+      console.log(`Class Eight`);
+      gadget();
+      break;
+    case 2009:
+      console.log(`Moviesssss`);
+      break;
+    case 2010:
+      console.log(`Vuiya sir`);
+      break;
+    case 2011:
+      console.log(`SSC`);
+      break;
+    case 2013:
+      console.log(`HSC `);
+      break;
+    case 2014:
+      console.log(`CSE`);
+      break;
+    default:
+      console.log(`put only these years to get result [1995, 2000, 2003 - 2011, 2013, 2014 ]`);
+  }
+  
+}
+
+
+
 /* 16. Ternary Operator */
 
+let luck = 6;
+
+if(luck === 7){
+  console.log(`lucky`);
+}else{
+  console.log(`bad day`);
+}
+
+let liqLuck = (luck === 7) ? console.log(`ternary lucky`) : console.log(`ternary bad day`);
+
+// let value in a Variable using condition
+
+let color = (luck === 7) ? 'green' : 'red';
