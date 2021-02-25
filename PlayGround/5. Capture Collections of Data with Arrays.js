@@ -171,9 +171,13 @@ myJuiceList.join(); // does NOT CHANGES original array & gives one String with c
 //replace ',' with anything. pass like an argument
 myJuiceList.join('#');// "AppleJuice#GrapeJuice#MangoJuice" 
 
+
 /* ===== 09 Slice =====  */
 
 // .slice give a portion from a array. [does not effect the original array]
+
+/* .slice( index you need , index you dont need) */
+
 let chipsFlouvers = ['spice', 'masala', 'cheese n onion', 'tom yum'];
 
 // * give me 'masala' 0r value of 'index 1' 
@@ -189,6 +193,8 @@ let copyOfchipsFlouvers = chipsFlouvers.slice(); //[MUST put ';' at the end.]
 
 
 /* ===== 10 Splice.mp4 ===== */
+
+/* .splice Does : add , delete, detele n replace */
 
 // .splice can add/remove inside of an array ()
 let animals = ['shark', 'salmon', 'whale', 'bear', 'lizerd', 'tortuise'];
@@ -258,20 +264,112 @@ let numberKhela = [ // 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
   ans: numberKhela.splice(6, 0, 'something')
 */
 
+let mixedArray = [12, 43, 'olodaamaaa', true, NaN, 'hello yo yo', undefined, false, 12, 43, 45, `wewewe`, 8484,]
+
+/* mixedArray.splice(4 , 1, 'NaN replaced') // returns NaN Adds "NaN replaced"
+
+  1. get the index
+  2. how many you want to delete 
+  3. what you want to replace
+
+  note: if you want to add something, the element added infront of the given index
+*/
+
+
+
+/* =====  11 Sorting (Part 1) ===== */
+
+/* .sort() method sorts based on Unicode [Not by numeric style] */
+
+let letterRandom = ['d', 'f', 'y', 'b', 'i', 'a', 'x', 'c', 'z'];
+// letterRandom.sort() // ["a", "b", "c", "d", "f", "i", "x", "y", "z"]
+
+let numRandom = [1, 10000, 23, 43, 10];
+// numRandom.sort() // [1, 10, 10000, 23, 43]
+
+/*
+  Note: by using a function we can sort by any sort we want
+*/
 
 
 
 
+/* ====== 12 Intro to Reference Types =======  */
+
+/*
+  [
+    * premitive types like: string, number, NaN, undefined stores their ACTUAL VALUE. if you make a copy of a variable and re-assaign the original copied variable value does not change
+
+    * Array and Object are stored as a Reference number. 
+  ]
+*/
+
+// 1. primitive value is stored as the ACTUAL VALUE
+let fruit = 'orange';
+let copyFruit = fruit;// value remains 'Orange'
+fruit = 'waterMelon';// fruit value variable changes.
+
+//2. Array and Object are stored as a reference number.
+
+// if I change myMarks(original array), copied one also changes.
+
+let myMarks = [1, 2, 3, 4, 5, 6]; //NOT stored as ARRAY //Stored as a reference number.
+let copyMyMarks = myMarks; // points the same reference number of the original.
+
+/* ===== 13 Using Const with Arrays ====== */
+
+/*
+  [
+    * Almost in ALL case, we will use CONST to make in array.
+    * We can modify a const array Content.
+    * We cannot change the reference to a new ARRAY.
+  ]
+*/
+
+const cartoons = ['spider-man'];
+
+//we can add anything in the array content
+cartoons.push('bat-man');
+cartoons.push('pokemon');
+cartoons.push('digimon');
+cartoons.unshift('bayBlade');
+cartoons.unshift('naruto');
+cartoons.unshift('zorro');
+
+cartoons.shift();
+cartoons.pop();
 
 
+//we can't make/Reference a new array 
+//let cartoons = ['dama']; //ERROR : Identifier 'cartoons' has already been declared
 
 
+/* ====== 14 Working with Nested Arrays ======  */
+
+// we can create array inside of an array
+
+//
+const lunch = [
+  ['rice', 'friedRice'],
+  ['chicken', 'chickenCurry'],
+  ['vegitables', 'mixedVegitables'],
+  ['fish', 'friedFish'],
+];
+
+// get the array value
+
+const placesInNestedArray = [
+  ['zero-zero', 'zero-one'],
+  ['one-zero', 'one-one'],
+  ['two-zero', 'two-one'],
+  ['three-zero', ['three-one-zero', 'three-one-one' ]],
+  ['four-zero', ['four-one-zero', 'four-one-one' ]],
+];
 
 
-
-
-
-/* 11 Sorting (Part 1)  */
-/* 12 Intro to Reference Types  */
-/* 13 Using Const with Arrays  */
-/* 14 Working with Nested Arrays  */
+// use case: sometimes is used to define the board of the game like chess, or Tic-tac-toe
+const board =[
+  [NaN, 'O', 'X'],
+  ['O', 'X', NaN],
+  ['X', NaN, 'O']
+];
