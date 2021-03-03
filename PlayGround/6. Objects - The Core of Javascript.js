@@ -28,21 +28,43 @@ cars.name; // this is valid
 
 /* ===== 3. Accessing Object Properties  ====== */
 
+let diffNumbers = {
+  100 : 'hundrad',
+  16: 'sisteen',
+  20: 'twenty',
+  '200': 'two hundrad',
+  yello : '#2345765',
+  '97 real' : 1234,
+  45: {
+    23: 'twentry three'
+  }
+}
 
+// how to get invalid identifier from an object?
 
+diffNumbers[20] //  for NUMBERS
+diffNumbers['100'] // also for NUMBERS
+diffNumbers['97 real'] // for Invalid identifier
+diffNumbers.yello //for keys/properties
 
-
-
-
-
-
-
-
-
-
+// multi level data 
+diffNumbers[45][23] //'twentry three'
 
 
 /* ===== 4. Adding and Updating Properties  ====== */
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===== 5. Nested Arrays & Objects  ====== */
 /* ===== 6. Objects and Reference Types  ====== */
 /* ===== 7. Array/Object Equality ====== */
