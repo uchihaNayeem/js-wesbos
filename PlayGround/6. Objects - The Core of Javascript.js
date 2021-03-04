@@ -26,6 +26,7 @@ cars.name; // this is valid
 // * Object converts 'keys' to 'string'. 
 // [ cars.45 ] this is invalid. because key(45) is converted to string. 
 
+
 /* ===== 3. Accessing Object Properties  ====== */
 
 let diffNumbers = {
@@ -51,20 +52,115 @@ diffNumbers.yello //for keys/properties
 diffNumbers[45][23] //'twentry three'
 
 
+
+const palatte = {
+  blue: '#123452',
+  green: '#123454',
+  yellow: '#543253',
+  pink: '#235467'
+}
+palatte.yellow
+palatte['yellow']
+
+
+// Store key/property in a variable
+let mysteryColor = 'yellow';
+palatte[mysteryColor]// gives the value of yellow
+
 /* ===== 4. Adding and Updating Properties  ====== */
 
+//an empty object
+const userReviews = {};
 
+// add keys/properties AND set value to an empty object
+userReviews['colt9933'] = 4.6;
+userReviews.stefhen = 5;
 
-
-
-
-
-
-
-
-
-
+//updating their values
+userReviews['colt9933'] += 1;
+userReviews.stefhen++;
 
 /* ===== 5. Nested Arrays & Objects  ====== */
+
+//objects with arrays
+
+
+//Array of objects 
+
+let cart = [
+  {
+    books: 2,
+    subs: 3,
+    class: 4
+  },
+  {
+    books: 21,
+    subs: 32,
+    class: 4
+  },
+  {
+    books: 'tilu',
+    subs: 3,
+    class: 4
+  },
+  {
+    books: 2,
+    subs: 56,
+    class: 'beisnab'
+  },
+]
+
+cart[3].class // beisnab
+
+
+
+
+
+
+
+
+
+
 /* ===== 6. Objects and Reference Types  ====== */
+const palette = {
+	red    : '#eb4d4b',
+	yellow : '#f9ca24',
+	blue   : '#30336b'
+};
+//Objects & Arrays are reference types
+const palette2 = palette;
+//If we change one value...
+palette2.green = '#ebf876';
+
+//Both variables reflect that change...
+palette.green; //"#ebf876"
+palette2.green; //"#ebf876"
+
+
+
+
 /* ===== 7. Array/Object Equality ====== */
+let nums = [ 1, 2, 3 ];
+let mysteryNums = [ 1, 2, 3 ];
+let moreNums = nums;
+
+//They 'look' the same, but refer to different arrays
+nums === mysteryNums; // false
+
+//These two arrays reference the exact same array, so we get true:
+nums === moreNums; //true
+
+const user = {
+	username      : 'CherryGarcia8',
+	email         : 'garcia@gmail.com',
+	notifications : [ 'message', 'alert' ]
+};
+
+//THIS WILL NOT WORK!
+if (user.notifications === []) {
+	console.log('NO NEW NOTIFICATIONS!');
+}
+// THIS VERSION DOES WORK!
+if (!user.notifications.length) {
+	console.log('NO NEW NOTIFICATIONS!');
+}
