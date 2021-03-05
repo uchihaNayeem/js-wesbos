@@ -106,11 +106,11 @@ let cart = [
   {
     books: 2,
     subs: 56,
-    class: 'beisnab'
+    class: 'Eight'
   },
 ]
 
-cart[3].class // beisnab
+cart[3].class // Eight
 
 
 
