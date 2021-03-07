@@ -27,6 +27,15 @@ cars.name; // this is valid
 // * Object converts 'keys' to 'string'. 
 // [ cars.45 ] this is invalid. because key(45) is converted to string. 
 
+//another object
+const cartoon = {
+  name: ['spiderman', 'ironman', 'sandocan'],
+  year: [2001, 2003, 2005],
+  origin: ['marvel', 'mondo TV'],
+  'native language': ['hindi', 'tamil']
+}
+
+
 
 /* ===== 3. Accessing Object Properties  ====== */
 
