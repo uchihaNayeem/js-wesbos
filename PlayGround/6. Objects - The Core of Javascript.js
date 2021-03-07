@@ -32,11 +32,13 @@ const cartoon = {
   name: ['spiderman', 'ironman', 'sandocan'],
   year: [2001, 2003, 2005],
   origin: ['marvel', 'mondo TV'],
-  'native language': ['hindi', 'tamil']
+  'native language': ['hindi', 'tamil'],
+  4: 'fantastic'
 }
 
 cartoon.origin
 cartoon['native language']
+cartoon1[4]
 
 /* ===== 3. Accessing Object Properties  ====== */
 
