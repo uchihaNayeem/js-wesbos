@@ -35,7 +35,8 @@ const cartoon = {
   'native language': ['hindi', 'tamil']
 }
 
-
+cartoon.origin
+cartoon['native language']
 
 /* ===== 3. Accessing Object Properties  ====== */
 
