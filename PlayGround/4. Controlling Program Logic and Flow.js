@@ -1,4 +1,8 @@
-/* 2. Comparison Operators */
+
+/*====================================*/
+/* ====== 2. Comparison Operators ====== */
+/*====================================*/
+
 
 // [<, >, <=, >=, ==, !=, ===. !==] 
 
@@ -17,27 +21,36 @@ console.log('b' < 'a'); //true
 //this happens because of the unicode. here A = 65 and a = 95 on unicode list
 //The are not used often. When you'll deal heavily with letters or charecter this will be usefull
 
-/* 3. Double Equals (==) */
+/*====================================*/
+/* ====== 3. Double Equals (==) ====== */
+/*====================================*/
 
 console.log(`this is (0 == '') (empty string) gives -> ${(0 == '')} `);
 console.log(`this is (1 == '1') gives -> ${(1 == '1')} `);
 
 
-/* 4. Triple Equals (===)*/
+/*====================================*/
+/* ====== 4. Triple Equals (===) ====== */
+/*====================================*/
+
 
 // ALWAYS USE === 
 // === will check not only VALUE but also TYPE
 console.log(`(1 === '1') gives us -> ${(1 === '1')}`);
 
-/* 5. Running Code From a Script */
+/*====================================*/
+/* ====== 5. Running Code From a Script ====== */
+/*====================================*/
+
 
 // I'm smart I know how to add a script on html page :D
 
 
 
-
-/* 6. If Statements */
-/* 7. Else If */
+/*====================================*/
+/* 6. ====== If Statements ====== */
+/* 7. ====== Else If ====== */
+/*====================================*/
 
 let rating = 0;
 
@@ -69,8 +82,9 @@ function evenify(num){
 
 let evenNum = evenify(14); //called func and stored in a func
 
-
-/* 8. Else */
+/*====================================*/
+/* ====== 8. Else ====== */
+/*====================================*/
 
 // there is a highScore in a game, each player can play and get a score. compare it if it's a highScore or not
 
@@ -85,8 +99,10 @@ if(userScore >= highScore){
 }
 
 
+/*====================================*/
+/* ====== 9. Nesting Conditionals ====== */
+/*====================================*/
 
-/* 9. Nesting Conditionals */
 
 // if a password contains '&' and 'space' then show the message
 let password = `hello kitty`;
@@ -105,8 +121,9 @@ if(password.length >= 6 && password.indexOf(' ') === -1 ){
 
 
 
-
-/* 10. Truthy & Falsy Values */
+/*====================================*/
+/* ====== 10. Truthy & Falsy Values ====== */
+/*====================================*/
 
 
 /* FALSY VALUE: [Nan, null, 0, 0/0, [].length, {}.length, '', undefined ]*/
@@ -128,18 +145,22 @@ if(loggedInUser){
   console.log(`please log in`);
 }
 
-
-/* 11. Logical AND (&&) */
-
-// I'm smart I know what && is :D
-
-
-/* 12. Logical OR (||) */
+/*====================================*/
+/* ====== 11. Logical AND (&&) ====== */ 
+/*====================================*/
 
 // I'm smart I know what && is :D
 
 
-/* 13. NOT Operator (!) */
+/*====================================*/
+/* ====== 12. Logical OR (||) ====== */
+/*====================================*/
+
+// I'm smart I know what && is :D
+
+/*====================================*/
+/* ====== 13. NOT Operator (!) ====== */
+/*====================================*/
 
 let flavour = `vanilla`;
 
@@ -154,8 +175,10 @@ if(!(model === 'lambo' || model === 'tesla' )){
 }
 
 
+/*====================================*/
+/* ====== 14. Operator Precedence ====== */
+/*====================================*/
 
-/* 14. Operator Precedence */
 // precedence means which one will run first?
 // ! && ||
 
@@ -168,8 +191,9 @@ console.log(x > 3 || x < 3 && x ==10);
 console.clear();
 
 
-
-/* 15. The Switch Statement */
+/*====================================*/
+/* ====== 15. The Switch Statement ====== */
+/*====================================*/
 
 /*
   [
@@ -296,8 +320,9 @@ function life(year){
 }
 
 
-
-/* 16. Ternary Operator */
+/*====================================*/
+/* ====== 16. Ternary Operator ====== */ 
+/*====================================*/
 
 let luck = 6;
 
