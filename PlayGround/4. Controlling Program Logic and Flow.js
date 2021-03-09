@@ -16,7 +16,7 @@ console.log(`he`.length >= `he`.length );
 
 console.log('A' < 'a'); //true
 console.log('B' < 'a'); //true
-console.log('b' < 'a'); //true
+console.log('b' < 'a'); //false
 
 //this happens because of the unicode. here A = 65 and a = 95 on unicode list
 //The are not used often. When you'll deal heavily with letters or charecter this will be usefull
@@ -188,7 +188,7 @@ console.log(x > 3 || x < 3 && x ==10);
 //NOTE if you get confused use prenthesis(). cause this will run first.
 
 
-console.clear();
+
 
 
 /*====================================*/

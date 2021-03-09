@@ -1,6 +1,8 @@
 /* TOTAL 1hr 7m */
 
+/*######################################*/
 /* ===== 01 Creating Arrays =====  */
+/*######################################*/
 
 //this is an ARRAY of Numbers
 let carModel = [12, 12, 23, 34, 45, 23];
@@ -12,7 +14,10 @@ let carHojoborol = [null, NaN, undefined, 'STRING', true, 12];
 //This is called Array Literal Syntax (Not often you see). 
 let carDumped = new Array(12, 12, 'two', true, 'lambo'); // carDumped gives an array
 
+/*######################################*/
 /* ====== 02 Array Indices ===== */
+/*######################################*/
+
 
 //Arrays are Indexed 
 const carColor = ['blue', 'green', 'yellow', 'pink'];
@@ -25,7 +30,9 @@ carColor[0];
 //* What we get when we try to access Invalid Index of an Array? 
 carColor[1236]; // Undefined
 
+/*######################################*/
 /* ====== 03 Modifying Arrays ====== */
+/*######################################*/
 
 const carBuyList = ['lambo', 'alfa romeo', 'mercedez', 'bmw'];
 
@@ -41,8 +48,9 @@ carBuyList[carBuyList.length] = 'Model X tesla'
 
 //Note: we can modify array with built in methods.
 
-
+/*######################################*/
 /* ===== 04 Push and Pop ===== */
+/*######################################*/
 
 /*
   [
@@ -100,7 +108,9 @@ let lastRemovedNumber = numbers.pop();
 
 let addNumber = numbers.push(7); //number 7 added
 
+/*######################################*/
 /* 05 Shift and Unshift.mp4  */
+/*######################################*/
 
 let sequenceNumbers = [0];
 
@@ -115,7 +125,9 @@ sequenceNumbers.shift(); //4
 let removeFromFirst = sequenceNumbers.shift(); //5
 //  3 2 1 0
 
+/*######################################*/
 /* ===== 06 Concat =====  */
+/*######################################*/
 
 
 let veggies = [`potato`, `cucumber`];
@@ -131,7 +143,9 @@ let mixedFoodArray = veggies.concat(fruits, meats);
 let allVeggiesNFruits = veggies.concat(fruits);
 
 
+/*######################################*/
 /* ===== 07 Includes and IndexOf =====  */
+/*######################################*/
 
 // .includes returns True or False
 // .IndexOf returns number of index (if available) Or -1 (if there no match)
@@ -156,7 +170,9 @@ carParts.includes('Glass') // false
 carParts.indexOf('Glass') // -1
 
 
+/*######################################*/
 /* ===== 08 Reverse and Join ===== */
+/*######################################*/
 
 // .reverse method CHANGES the original array
 let myLetters = ["t", "c", "e", "p", "s", "e", "r"]
@@ -172,7 +188,9 @@ myJuiceList.join(); // does NOT CHANGES original array & gives one String with c
 myJuiceList.join('#');// "AppleJuice#GrapeJuice#MangoJuice" 
 
 
+/*######################################*/
 /* ===== 09 Slice =====  */
+/*######################################*/
 
 // .slice give a portion from a array. [does not effect the original array]
 
@@ -192,7 +210,9 @@ let copyOfchipsFlouvers = chipsFlouvers.slice(); //[MUST put ';' at the end.]
 [1, 2, 3, 4, 5, 6, 7, 8, 9].slice(-3, -1) // [7, 8]
 
 
+/*######################################*/
 /* ===== 10 Splice.mp4 ===== */
+/*######################################*/
 
 /* .splice Does : add , delete, detele n replace */
 
@@ -276,8 +296,9 @@ let mixedArray = [12, 43, 'olodaamaaa', true, NaN, 'hello yo yo', undefined, fal
 */
 
 
-
+/*######################################*/
 /* =====  11 Sorting (Part 1) ===== */
+/*######################################*/
 
 /* .sort() method sorts based on Unicode [Not by numeric style] */
 
@@ -293,8 +314,9 @@ let numRandom = [1, 10000, 23, 43, 10];
 
 
 
-
+/*######################################*/
 /* ====== 12 Intro to Reference Types =======  */
+/*######################################*/
 
 /*
   [
@@ -316,7 +338,9 @@ fruit = 'waterMelon';// fruit value variable changes.
 let myMarks = [1, 2, 3, 4, 5, 6]; //NOT stored as ARRAY //Stored as a reference number.
 let copyMyMarks = myMarks; // points the same reference number of the original.
 
+/*######################################*/
 /* ===== 13 Using Const with Arrays ====== */
+/*######################################*/
 
 /*
   [
@@ -344,7 +368,9 @@ cartoons.pop();
 //let cartoons = ['dama']; //ERROR : Identifier 'cartoons' has already been declared
 
 
+/*######################################*/
 /* ====== 14 Working with Nested Arrays ======  */
+/*######################################*/
 
 // we can create array inside of an array
 
