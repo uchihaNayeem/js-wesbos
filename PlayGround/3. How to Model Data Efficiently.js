@@ -1,4 +1,7 @@
+/*====================================*/
 /* ====== 3. String Indices.mp4 ===== */
+/*====================================*/
+
 
 // intro to strings
 
@@ -20,25 +23,27 @@ strEachWord = `HE`;
 //Note: this will not effect the accual string
 
 
-
+/*====================================*/
 /* ====== 4.String Methods.mp4 ===== */
+/*====================================*/
 
-//1. string has some builtin, methods. we can use thtose to do something with the string
+//1. string has some builtin methods. we can use those to do something with the string
 
 let rockSong = `   you better lose YOURSELF in the musiC..   `;
 
 // adding methods
 console.log(rockSong.toLowerCase());
 console.log(rockSong.toUpperCase());
-console.log(rockSong.trim());
+console.log(rockSong.trim()); //deletes extra space in the string
 
 //Note: if we want to use this, we have to store it in a new variable. Cause the accual string is unchanged.
 console.log(rockSong);
 
 
 
-
+/*====================================*/
 /* ====== 5. More String Methods.mp4 ===== */
+/*====================================*/
 
 //1. string methods can take argument in their perenthesis->[ (arg) ]
 
@@ -49,7 +54,7 @@ console.log(pickupLine.indexOf('beautiful')); // ans 12
 console.log(pickupLine.indexOf('bea')); //ans 12
 console.log(pickupLine.indexOf('123')); //ans -1 (when its not there it gives -1)
 
-//Note: it start from begining and stops when it finds it. Here 'bae' is not reached because it find 'bae' in 'beatiful'. this is a gatchYa 
+//Note: it start from begining and stops when it finds it. Here 'bea' is not reached because it find 'bae' in 'beatiful'. this is a GATCH'Aaa 
 
 //3. use case 
 if(pickupLine.indexOf('123') === -1){
@@ -78,15 +83,17 @@ console.log(funnyFace.replace('ha', 'hee'));
 console.log(funnyFace.replace(/\a/g, 'e'));
 
 
+/*====================================*/
+/* ====== 6. String QUIZ.mp4 ===== */
+/*====================================*/
 
-/* ====== 6. String Quiz.mp4 ===== */
-
-//ans: 54 i undefined LONDON CALLING [todd@gmail.com] 7 7 RAGE!
+//ans of the quizes: 54 i undefined LONDON CALLING [todd@gmail.com] 7 7 RAGE!
 //i gave some wrong ans!!! :/
 console.log(`GARBAGE!`.slice(2).replace('B', ''));
 
-
+/*====================================*/
 /* ====== 7. String Escape charecters.mp4 ===== */ 
+/*====================================*/
 
 //following things are not really imp but just good to know
 
@@ -97,8 +104,9 @@ console.log(`GARBAGE!`.slice(2).replace('B', ''));
   \\ -BackSlash
 */
 
-
+/*====================================*/
 /* ====== 8. String templete literals.mp4 ===== */ 
+/*====================================*/
 
 let narutoPower = `Rashengan`;
 let narutoPowerSpecial = `OLODAMA Rashengannnnn`;
@@ -108,14 +116,17 @@ let narutoUses = `Naruto uses special ${narutoPower} called ${narutoPowerSpecial
 console.log(narutoUses);
 
 
+/*====================================*/
 /* ====== 9. null and undefined.mp4 ===== */ 
+/*====================================*/
 
 let theUserLoggedIn; //gives undefined because there is no value assaigned 
 
 theUserLoggedIn = null; // Intensionally set to null, which also means nothing
 
-
+/*====================================*/
 /* ====== 10. The Math Object & Random Numbers.mp4 ===== */ 
+/*====================================*/
 
 console.log(Math.floor(Math.random()*6) + 1); // gives 1-6;
 console.log(Math.floor(2.9999)); //2 
@@ -125,8 +136,9 @@ console.log(Math.ceil(2.2));// 3
 
 
 
-
+/*====================================*/
 /* ====== 11. typeof operator.mp4 ===== */ 
+/*====================================*/
 
 let someStr = `Hello`;
 let someNum = 12;
@@ -142,7 +154,9 @@ console.log(typeof someStr, typeof someNum, typeof(someBolean));
 //console cleared
 console.clear()
 
+/*====================================*/
 /* ====== 12. parseInt & parseFloat.mp4 ===== */ 
+/*====================================*/
 
 //CONVERT string to a number
 
