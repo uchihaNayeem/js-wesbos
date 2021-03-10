@@ -1,6 +1,8 @@
-/* TOTAL 40m
+/* TOTAL 40m */
 
+/*######################################*/
 /* ===== 1. Intro to Objects ====== */
+/*######################################*/
 
 /*
   [
@@ -10,7 +12,9 @@
   ]
 */
 
+/*######################################*/
 /* ===== 2. Creating Object Literals  ====== */
+/*######################################*/
 
 
 const cars = { // [key] : [value] ,
@@ -40,7 +44,9 @@ cartoon.origin
 cartoon['native language']
 cartoon1[4]
 
+/*######################################*/
 /* ===== 3. Accessing Object Properties  ====== */
+/*######################################*/
 
 let diffNumbers = {
   100 : 'hundrad',
@@ -80,7 +86,9 @@ palatte['yellow']
 let mysteryColor = 'yellow';
 palatte[mysteryColor]// gives the value of yellow
 
+/*######################################*/
 /* ===== 4. Adding and Updating Properties  ====== */
+/*######################################*/
 
 //an empty object
 const userReviews = {};
@@ -93,7 +101,9 @@ userReviews.stefhen = 5;
 userReviews['colt9933'] += 1;
 userReviews.stefhen++;
 
+/*######################################*/
 /* ===== 5. Nested Arrays & Objects  ====== */
+/*######################################*/
 
 //objects with arrays
 
@@ -128,13 +138,10 @@ cart[3].class // Eight
 
 
 
-
-
-
-
-
-
+/*######################################*/
 /* ===== 6. Objects and Reference Types  ====== */
+/*######################################*/
+
 const palette = {
 	red    : '#eb4d4b',
 	yellow : '#f9ca24',
@@ -151,8 +158,10 @@ palette2.green; //"#ebf876"
 
 
 
-
+/*######################################*/
 /* ===== 7. Array/Object Equality ====== */
+/*######################################*/
+
 let nums = [ 1, 2, 3 ];
 let mysteryNums = [ 1, 2, 3 ];
 let moreNums = nums;

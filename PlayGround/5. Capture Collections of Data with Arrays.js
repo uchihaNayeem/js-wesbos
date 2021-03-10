@@ -76,7 +76,7 @@ carSongPlaylist.push('Deinare danse', 'sand timowa, sand tamowa');
 
 
 // carSongPlaylist.pop();
-carSongPlaylist.pop();
+carSongPlaylist.pop(); 
 const removedSong = carSongPlaylist.pop(); // 
 
 const addNewSong = carSongPlaylist.push('Kamuste dulche, fuch fuch funa mika dulche');
@@ -114,7 +114,7 @@ let addNumber = numbers.push(7); //number 7 added
 
 let sequenceNumbers = [0];
 
-sequenceNumbers.unshift('olodama');
+sequenceNumbers.unshift(1);
 sequenceNumbers.unshift(2);
 sequenceNumbers.unshift(3);
 sequenceNumbers.unshift(4,5);
