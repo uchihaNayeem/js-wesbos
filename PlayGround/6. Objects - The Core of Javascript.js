@@ -13,7 +13,7 @@
 */
 
 /*######################################*/
-/* ===== 2. Creating Object Literals  ====== */
+/* ====== 2. Creating Object Literals  ====== */
 /*######################################*/
 
 
@@ -25,7 +25,7 @@ const cars = { // [key] : [value] ,
   45: 'fortyFive'
 }
 
-//how to access key from a object
+//how to access key from a object?
 cars.name; // this is valid 
 
 // * Object converts 'keys' to 'string'. 
@@ -42,7 +42,7 @@ const cartoon = {
 
 cartoon.origin
 cartoon['native language']
-cartoon1[4]
+cartoon[4]
 
 /*######################################*/
 /* ===== 3. Accessing Object Properties  ====== */
@@ -185,4 +185,31 @@ if (user.notifications === []) {
 // THIS VERSION DOES WORK!
 if (!user.notifications.length) {
 	console.log('NO NEW NOTIFICATIONS!');
+}
+
+
+
+
+/*######################################*/
+/* ===== Again Practice ====== */
+/*######################################*/
+
+let uniliver = {
+  products: ['fair & lovely', 'mens cream', 'glow & lovely', 'lux soap', 'lux body wash'],
+  'fair & lovely': 2000,
+  'mens cream': 3400,
+  'lux soap': 500000,
+  target: ['middle class', 'lower middle class', 'lower class'],
+  year: [2000, 2012, 2014, 2016],
+  actors: ['karina', 'depika', 'bipasa'],
+  45: [
+    {
+      67: ['sixty seven', 'six', 'seven'],
+      201: ['two', 'zero', 'one'],
+      name: ['OLODAMA', 'RASHENGAN']
+    },
+    {
+      12: 'twelve',
+    }
+  ]
 }
