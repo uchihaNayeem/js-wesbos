@@ -218,3 +218,4 @@ let uniliver = {
 uniliver[45][0].name[1]
 uniliver["fair & lovely"]
 uniliver.actors[0]
+uniliver[45][1][12]
