@@ -217,3 +217,4 @@ let uniliver = {
 //accessing data
 uniliver[45][0].name[1]
 uniliver["fair & lovely"]
+uniliver.actors[0]
