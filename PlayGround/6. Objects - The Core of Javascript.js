@@ -194,7 +194,7 @@ if (!user.notifications.length) {
 /* ===== Again Practice ====== */
 /*######################################*/
 
-let uniliver = {
+let unilever = {
   products: ['fair & lovely', 'mens cream', 'glow & lovely', 'lux soap', 'lux body wash'],
   'fair & lovely': 2000,
   'mens cream': 3400,
@@ -215,8 +215,14 @@ let uniliver = {
 }
 
 //accessing data
-uniliver[45][0].name[1]
-uniliver["fair & lovely"]
-uniliver.actors[0]
-uniliver[45][1][12]
-uniliver[45][0].name[1] //accessing array objects
+unilever[45][0].name[1]
+unilever["fair & lovely"]
+unilever.actors[0]
+unilever[45][1][12]
+unilever[45][0][201][1]
+unilever[45][0].name[1] //accessing array objects
+unilever[45][0][67][2]
+
+//set a property in the object
+
+unilever.power = ['olodama', 'rasengan'];
