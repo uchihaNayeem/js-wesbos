@@ -226,3 +226,4 @@ unilever[45][0][67][2]
 //set a property in the object
 
 unilever.power = ['olodama', 'rasengan'];
+unilever.numbers = ['one', 'two'];
