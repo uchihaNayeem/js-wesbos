@@ -231,3 +231,5 @@ unilever.numbers.push('three')
 //if the object value is number, increment to one
 unilever['mens cream']++
 unilever['mens cream']++
+unilever['mens cream']++
+unilever['mens cream']++
