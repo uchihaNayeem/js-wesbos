@@ -224,7 +224,9 @@ unilever[45][0].name[1] //accessing array objects
 unilever[45][0][67][2]
 
 //set a property in the object
-
 unilever.power = ['olodama', 'rasengan'];
 unilever.numbers = ['one', 'two'];
 unilever.numbers.push('three')
+
+//if the object value is number, increment to one
+unilever['mens cream']++
