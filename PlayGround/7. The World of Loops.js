@@ -99,6 +99,7 @@ for(let i = 0; i < roll.length; i++){
 /*################################*/
 
 
+
 let game = [
   [12, 24, 36, 35],
   [19, 21, 45, 76],
@@ -119,12 +120,17 @@ for(let i =0; i<= game.length -1 ;i++){
 
 let someNum = [1, 2, 3, 4 , 5, 6, 7, 8, 9, 10]
 
-for(let i = 0;i<=someNum.length-1; i++){
-  let total = 0
-  console.log(i);
+let total = 0
+
+for(let i = 0;i<=someNum.length-1; i++){  
   total += someNum[i]
   console.log(total);
 }
+
+console.clear();
+
+let words = `streesed`;
+
 
 
 
