@@ -99,11 +99,32 @@ for(let i = 0; i < roll.length; i++){
 /*################################*/
 
 
+let game = [
+  [12, 24, 36, 35],
+  [19, 21, 45, 76],
+  [72, 34, 87, 67],
+  [82, 48, 86, 45],
+]
+
+let tootal = 0
+for(let i =0; i<= game.length -1 ;i++){
+  console.log(game[i]);
+  let row = game[i]
+  for(let j=0; j<= row.length-1; j++){
+    console.log(row[j]);
+    tootal = tootal + row[j]
+  }
+}
 
 
+let someNum = [1, 2, 3, 4 , 5, 6, 7, 8, 9, 10]
 
-
-
+for(let i = 0;i<=someNum.length-1; i++){
+  let total = 0
+  console.log(i);
+  total += someNum[i]
+  console.log(total);
+}
 
 
 
