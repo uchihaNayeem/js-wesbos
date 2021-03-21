@@ -238,7 +238,6 @@ unilever['mens cream']++
 
 const fruits = [1, 2, 3];
 const veggis = [1, 2, 3];
-
 const againFruits = fruits
 
 
