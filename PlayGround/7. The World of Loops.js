@@ -16,27 +16,25 @@
 /*################################*/
 /* ====== 2. For Loops ====== */
 /*################################*/
+console.log(`
+====== 2. For Loops ======
 
+`);
 
-console.log(`====== 2. For Loops ======`);
-
- 
-for(let i = 0; i <= 10; i++){
-  console.log(i);
+//1. simple for loops 
+for(let i = 0; i<= 10; i++){
+  console.log(`we get: ${i}`);
 }
 
-console.log('hello');
-
-// show the squred power value uoto 20
-for(let i = 0; i <= 20; i++){
-  console.log(`${i} X ${i} = ${i*i}`);
+//2. make perfect squere for 1-20
+for(let i = 0;i<=20;i++){
+  console.log(`${i} X ${i} = ${i * i}`);
 }
 
-for(let i=200; i >= 0 ; i-=25){
-  console.log(i);
+//3. for loop backward [start from 200 and substract 25 until it hits 0]
+for(let i = 200; i>=0; i -= 25){
+  console.log(`backward: ${i}`);
 }
-
-
 
 /*################################*/
 /* ====== 3. Infinite Loops! ====== */
@@ -55,92 +53,90 @@ console.log(i);
 /*################################*/
 
 
-console.log(`====== 4. For Loops & Arrays ======
+console.log(`
+====== 4. For Loops & Arrays ======
 
 `);
 
-let roll = [12, 23, 34, 45, 56, 67, 78, 89, 90]
-let nums = [1,2,3,4,5,6,7,8,9]
-let students = [
+// 1. run [for loop] to an 'array'
+let myExamNum = [12, 23, 34, 45, 56, 67, 78, 79, 89, 90, 99]
+
+for(let i = 0; i < myExamNum.length; i++){
+  console.log(`each number from array: ${myExamNum[i]}`);
+}
+
+// 2. run [for loop] to an 'array of objects'
+const tvSeries = [
   {
-    name: 'nayeem',
-    roll: 214
+    name: 'Game of throne',
+    rating: 9.5
   },
   {
-    name: 'naruto',
-    roll: 2123
+    name: 'The Witcher',
+    rating: 8
   },
   {
-    name: 'witcher',
-    roll: 12123
+    name: 'Breaking bad',
+    rating: 9.5
   },
   {
-    name: 'jhon',
-    roll: 1221
+    name: 'Better Call Saul',
+    rating: 6
+  },
+  {
+    name: 'Peaky Blinders',
+    rating: 9
   },
 ]
 
-for(let i = 0; i < students.length; i++){
-  let stu = students[i]
-  let name = stu.name
-  let roll = stu.roll
-  console.log(`Name: ${name}, Roll: ${roll}`);
+for(let i = 0; i<tvSeries.length; i++){
+  let shows = tvSeries[i];
+  console.log(`name: ${shows.name}, rating: ${shows.rating}`);
 }
 
-for(let i = 0; i < roll.length; i++){
-  console.log(roll[i]);
+// 3. run [for loop] to a 'string' AND reverse the string
+let simpleWord = 'stressed';
+
+let reversedWords = '';
+for(let i = simpleWord.length -1; i>=0;i--){
+  reversedWords += simpleWord[i]
 }
+console.log(`'${simpleWord}' reversed '${reversedWords}'`);
 
+// 4. find the avarage rating form the `object`
 
+let avarageRating = 0;
+for(let i = 0; i<tvSeries.length; i++){
+  avarageRating += tvSeries[i].rating/tvSeries.length
+}
+console.log(`the avarage movie rating is:  ${avarageRating}`);
 
 /*################################*/
 /* ====== 5. Nested For Loops ====== */
 /*################################*/
-
-console.log(` ====== 5. Nested For Loops ======
+console.log(`
+====== 5. Nested For Loops ====== 
 
 `);
 
-let game = [
-  [12, 24, 36, 35],
-  [19, 21, 45, 76],
-  [72, 34, 87, 67],
-  [82, 48, 86, 45],
+let chessGame = [
+  [2, 4, 8, 16, 32],
+  [25, 42, 81, 56, 72],
+  [23, 47, 88, 36, 82],
+  [27, 64, 38, 78, 23],
 ]
 
-let tootal = 0
-for(let i =0; i<= game.length -1 ;i++){
-  console.log(game[i]);
-  let row = game[i]
-  for(let j=0; j<= row.length-1; j++){
-    console.log(row[j]);
-    tootal = tootal + row[j]
+let allChessNum = [];
+let allChessSum = 0;
+for(let i=0; i<chessGame.length; i++){
+  let row = chessGame[i];
+  for(let j=0; j<row.length; j++){
+    allChessNum.push(row[j]);
+    allChessSum += row[j]
   }
 }
-
-
-let someNum = [1, 2, 3, 4 , 5, 6, 7, 8, 9, 10]
-
-let total = 0
-
-for(let i = 0;i<=someNum.length-1; i++){  
-  total += someNum[i]
-  console.log(total);
-}
-
-
-
-let words = `streesed`;
-let toootal = '';
-for(let i = words.length - 1; i>=0; i--){
-console.log(i);
-toootal += words[i]
-}
-
-console.log(toootal);
-
-
-
+console.log(allChessNum);
+console.log(`sum of all numbers in chessGame: ${allChessSum}`);
 
 /* ====== 6. Intro to While Loops ====== */
 /* ====== 7. More While Loops ====== */
@@ -149,11 +145,6 @@ console.log(toootal);
 /* ====== 10. Comparing For and For...Of ====== */
 /* ====== 11. For...Of with Objects ====== */
 /* ====== 12. For...In Loops ====== */
-
-
-
-
-
 /*################################*/
 /* ====== PRACTICE ====== */
 /*################################*/
