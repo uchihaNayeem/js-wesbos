@@ -17,7 +17,7 @@
 /* ====== 2. For Loops ====== */
 /*################################*/
 
-/*
+
 console.log(`====== 2. For Loops ======`);
 
  
@@ -36,7 +36,7 @@ for(let i=200; i >= 0 ; i-=25){
   console.log(i);
 }
 
-*/
+
 
 /*################################*/
 /* ====== 3. Infinite Loops! ====== */
@@ -54,7 +54,7 @@ console.log(i);
 /* ====== 4. For Loops & Arrays ====== */
 /*################################*/
 
-/*
+
 console.log(`====== 4. For Loops & Arrays ======
 
 `);
@@ -91,14 +91,15 @@ for(let i = 0; i < roll.length; i++){
   console.log(roll[i]);
 }
 
- */
 
 
 /*################################*/
 /* ====== 5. Nested For Loops ====== */
 /*################################*/
 
+console.log(` ====== 5. Nested For Loops ======
 
+`);
 
 let game = [
   [12, 24, 36, 35],
@@ -127,10 +128,16 @@ for(let i = 0;i<=someNum.length-1; i++){
   console.log(total);
 }
 
-console.clear();
+
 
 let words = `streesed`;
+let toootal = '';
+for(let i = words.length - 1; i>=0; i--){
+console.log(i);
+toootal += words[i]
+}
 
+console.log(toootal);
 
 
 
@@ -142,3 +149,82 @@ let words = `streesed`;
 /* ====== 10. Comparing For and For...Of ====== */
 /* ====== 11. For...Of with Objects ====== */
 /* ====== 12. For...In Loops ====== */
+
+
+
+
+
+/*################################*/
+/* ====== PRACTICE ====== */
+/*################################*/
+
+console.log(`
+/* ====== PRACTICE ====== */
+
+`);
+
+
+
+/*
+  [
+    1. 'for' loop is used for do something 'over and over again';
+    2. syntax: 
+      * for(){
+
+        }
+      * for( [variable, condition, increment] ){
+              [execute this after each step]
+        }
+    3.
+  ]
+*/
+
+
+
+
+// ===== simple for loop =========
+
+// forward count (1, 2, 3, ...)
+for( 
+  let i = 0; // initial variable
+  i <= 20; // condition or how long it will run
+  i++ // increment by 1
+){
+  console.log(i);
+}
+
+
+// backward count (20, 19, 18, ...)
+
+for( 
+  let i = 20; // initial variable
+  i>=0; // condition or how long it will run
+  i-- // increment by 1
+){
+  console.log(`  ${i}`);
+}
+
+
+//200 theke 15 kore bad dibo
+
+let storione = []
+for( 
+  let i = 200; // initial variable
+  i>=0; // condition or when it will stop running
+  i = i - 15 // increment by 1
+){
+  console.log(`hello ${i}`);
+  storione.push(i);
+}
+
+console.log(storione);
+
+let sumStorione = 0
+for(let i = 0; i < storione.length; i++ ){
+  console.log(`this ${storione[i]}`);
+  sumStorione = sumStorione + storione[i]
+}
+
+console.log(`total storione ${sumStorione}`);
+
+
