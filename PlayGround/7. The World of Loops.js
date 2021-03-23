@@ -138,8 +138,101 @@ for(let i=0; i<chessGame.length; i++){
 console.log(allChessNum);
 console.log(`sum of all numbers in chessGame: ${allChessSum}`);
 
+
+
+/*################################*/
 /* ====== 6. Intro to While Loops ====== */
+/*################################*/
+console.log(`
+====== 6. Intro to While Loops ======
+
+`);
+
+// 01. simple while loop syntax
+
+let num = 0;
+while(num <= 5){ // This will run UNTIL the condition is true. 
+  console.log(num);
+  num++ //MUST be added. Or it will become an infinite loop 
+}
+
+/*
+  [
+    * syntax: let i = 0;
+              while( [Any Condition] ){
+                console.log(i);
+                i++;
+             }
+
+    * in the '( )' we can give any condition we need.
+        (i <=5 OR i !== 5)etc.
+
+    * MUST include i++, or it will become infinite loop.
+    * Loop will run until the condition is true
+  ]
+*/
+
+
+
+
+/*################################*/
 /* ====== 7. More While Loops ====== */
+/*################################*/
+console.log(`
+====== 7. More While Loops ======
+
+`);
+
+/*
+  [
+    * While loop is GOOD where we DONT know how many times it will run
+    * In for loop we KNOW how many times it will run,
+      In while loop we DONT know how many times it will run.
+    
+  ]
+*/
+
+
+
+const myTarget = Math.floor(Math.random() * 10)
+let myGuess = Math.floor(Math.random() * 10)
+
+console.log(`Guess: ${myGuess}, Target: ${myTarget}
+____________________
+
+`);
+
+
+while (myGuess !== myTarget){ // ai loop Totokkhon colbe Jotokkhon ai conditon true hote takbe. Condition jokhoni false hobe, loop stop hoye jabe.
+  myGuess = Math.floor(Math.random() * 10)
+  // console.log(`Guess: ${myGuess} T:${myTarget}`);
+}
+console.log(`TARGET: ${myTarget}, Guess: ${myGuess}`);
+
+
+
+// ======= another example
+let i= 0
+const fixNum = 3;
+let myGuss = Math.floor(Math.random() * 10)
+
+while (myGuss !== fixNum){
+  myGuss = Math.floor(Math.random() * 10)
+  // console.log(`Guess: ${myGuss} T:${fixNum}`);
+  i++ 
+}
+console.log(`TARGET: ${fixNum}, Guess: ${myGuss} took ${i} loops`);
+
+
+
+
+
+
+
+
+
+
+
 /* ====== 8. Break Keyword ====== */
 /* ====== 9. For...Of Intro ====== */
 /* ====== 10. Comparing For and For...Of ====== */
