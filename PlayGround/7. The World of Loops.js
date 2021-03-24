@@ -228,14 +228,132 @@ console.log(`TARGET: ${fixNum}, Guess: ${myGuss} took ${i} loops`);
 
 
 
-
-
-
-
-
+/*################################*/
 /* ====== 8. Break Keyword ====== */
+/*################################*/
+console.log(`
+====== 8. Break Keyword ======
+
+`);
+
+//01
+for(let i= 0;i<=10;i++){
+console.log(i)
+if(i === 5){
+  break
+}
+}
+
+
+//02 same example of while
+let fixedValue = Math.floor(Math.random() * 4);
+let guessValue = Math.floor(Math.random() * 4);
+
+while(fixedValue !== guessValue){
+  guessValue = Math.floor(Math.random() * 4);
+}
+
+console.log(fixedValue, guessValue );
+
+//03 same example using break 
+
+let fixedValueOne = Math.floor(Math.random() * 10);
+let guessValueOne = Math.floor(Math.random() * 10);
+
+while(true){
+  if(fixedValueOne === guessValueOne ){break}
+  guessValueOne = Math.floor(Math.random() * 10);
+}
+
+console.log(fixedValueOne, guessValueOne );
+
+
+
+/*################################*/
 /* ====== 9. For...Of Intro ====== */
+/*################################*/
+console.log(`
+====== 9. For...Of Intro ======
+
+`);
+
+let booksNames = ['javascript', 'best of world', 'record books', 'olodama Books']
+
+
+for(let i = 0; i < booksNames.length; i++){
+  console.log(booksNames[i]);
+}
+
+
+for(let elements of booksNames){
+  console.log(elements);
+}
+
+
+
+/*#############################################*/
 /* ====== 10. Comparing For and For...Of ====== */
+/*#############################################*/
+console.log(`
+====== 10. Comparing For and For...Of ======
+
+`);
+
+
+let magicSquare = [
+  [2, 7, 6,],
+  [9, 5, 1,],
+  [4, 3, 8,]
+
+];
+
+//
+for(let i = 0; i< magicSquare.length; i++){
+  // console.log(magicSquare[i]);
+  let row = magicSquare[i];
+  let rowSum = 0;
+  
+  for(let j = 0; j< row.length; j++){
+    // console.log(row[j]);
+    rowSum += row[j];
+  }
+  // console.log(rowSum);
+  console.log(`using for: ${magicSquare[i]} = ${rowSum}`);
+  
+}
+
+
+for(let row of magicSquare){
+  // console.log(row);
+  let sum = 0;
+  for(let each of row){
+    // console.log(each);
+    sum += each
+  }
+  console.log(`using for...of: ${row} = ${sum}`);
+}
+
+//for...of is not good when you need to work with index number
+let wordOne = ['Mega', 'Java', 'Olodama-', 'Sun'];
+let wordTwo = ['tron', 'script', 'rasengan', 'rise'];
+
+
+for(let i = 0;i<wordOne.length;i++){
+  console.log(`${wordOne[i]}${wordTwo[i]}`);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ====== 11. For...Of with Objects ====== */
 /* ====== 12. For...In Loops ====== */
 /*################################*/
