@@ -11,6 +11,7 @@
       -> while loop,
       -> for... of loop
       -> for...in loop
+  * If we want to generate NUMBERS we'll use for loop      
 */ 
 
 /*################################*/
@@ -136,7 +137,8 @@ for(let i=0; i<chessGame.length; i++){
   }
 }
 console.log(allChessNum);
-console.log(`sum of all numbers in chessGame: ${allChessSum}`);
+console.log(allChessSum);
+
 
 
 
@@ -226,8 +228,6 @@ console.log(`TARGET: ${fixNum}, Guess: ${myGuss} took ${i} loops`);
 
 
 
-
-
 /*################################*/
 /* ====== 8. Break Keyword ====== */
 /*################################*/
@@ -299,6 +299,13 @@ console.log(`
 
 `);
 
+/*
+  [
+    1. if you need to get the DATA from the array, for..of is GOOD
+    2. if you need to get the DATA & index NO. from the array, for loop is GOOD
+  ]
+*/
+
 
 let magicSquare = [
   [2, 7, 6,],
@@ -346,24 +353,91 @@ for(let i = 0;i<wordOne.length;i++){
 
 
 
-
-
-
-
-
-
-
-
+/*#########################################*/
 /* ====== 11. For...Of with Objects ====== */
-/* ====== 12. For...In Loops ====== */
-/*################################*/
-/* ====== PRACTICE ====== */
-/*################################*/
-
+/*#########################################*/
 console.log(`
-/* ====== PRACTICE ====== */
+====== 11. For...Of with Objects ====== 
 
 `);
+
+let movieReviews = {
+  Inception: 9,
+  'Catch me if you can': 9.5,
+  LionKing: 7,
+  Luckyman: 2.7,
+  'Better call saul': 3,
+  'Game Of Throne': 9.5,
+  'spider-man': 10,
+}
+
+let movieName = []
+for(let names of Object.keys(movieReviews)){
+  movieName.push(names)
+  console.log(`${names} ${movieReviews[names]}`);
+}
+
+let movieRating = [];
+for(let num of Object.values(movieReviews)){
+  movieRating.push(num)
+}
+
+console.log(movieName, movieRating);
+
+let avarageMovieRating = 0
+for(let num of movieRating){
+  avarageMovieRating += num/movieRating.length
+
+}
+console.log(`rating avarage: ${Math.round(avarageMovieRating)}`);
+
+
+
+
+/*##################################*/
+/* ====== 12. For...In Loops ====== */
+/*##################################*/
+console.log(`
+====== 12. For...In Loops ======
+
+`);
+
+
+
+let courseRatings = {
+  Phy101: 3,
+  Chem101: 1,
+  Math101: 1,
+  CSE101: 8.6,
+  Data101: 7.5
+}
+
+//lets make avarage of ratings
+let sum = 0
+let allCourseRatings = []
+for(let props in courseRatings){
+  console.log(props, courseRatings[props]);
+  sum+= courseRatings[props]
+  allCourseRatings.push(courseRatings[props])
+}
+
+let avarageCourseRating = sum/allCourseRatings.length
+
+console.log(`
+The sum of the all course Rating: ${sum}
+the Avarage of course rating: ${avarageCourseRating}
+All rationg pushed in new array: ${allCourseRatings}
+`);
+
+
+
+
+
+
+/*################################*/
+/* ====== PRACTICE ====== */
+/*################################*/
+
 
 
 
@@ -382,7 +456,7 @@ console.log(`
 */
 
 
-
+/* //START
 
 // ===== simple for loop =========
 
@@ -430,3 +504,4 @@ for(let i = 0; i < storione.length; i++ ){
 console.log(`total storione ${sumStorione}`);
 
 
+//END */
