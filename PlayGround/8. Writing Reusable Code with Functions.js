@@ -22,6 +22,28 @@ for(let i = 0; i<2; i++){
 /*############################################# */
 /* ====== 2. Dice Roll Function [03:23] ======= */
 /*############################################# */
+console.log(`
+/* ====== 2. Dice Roll Function [03:23] ======= */
+
+`);
+
+// define a function to genarate number 1-6
+function rollDie(){
+  let num = Math.ceil(Math.random() * 6)
+  console.log(`Rolled: ${num}`);
+}
+
+// Call that function INSIDE of a function
+function rollSixTimes(){
+  rollDie()
+  rollDie()
+  rollDie()
+  rollDie()
+  rollDie()
+  rollDie()
+}
+
+// NOTE: we can call a function ALMOST anywhere. in loop, conditionals etc.
 
 
 
