@@ -47,32 +47,36 @@ function rollSixTimes(){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*############################################# */
 /* ====== 3. Introducing Arguments [07:40] ======= */
 /*############################################# */
+console.log(`
+/* ====== 3. Introducing Arguments [07:40] ======= */
+
+`);
+
+// make sum of an array using FOR loop
+let num = [12, 23, 35, 56, 78, 98];
+
+let sum = 0;
+for(let i = 0;i<num.length;i++){
+  sum += num[i]
+}
+console.log(sum);
+
+
+// make sum of an array using FUNCTION
+let newNum = [121212, 232323, 343465]
+function avg(namai){
+  let sum = 0;
+  for(let i = 0;i<namai.length;i++){
+  sum += namai[i];
+  console.log(sum);
+}
+
+}
+
+avg(newNum)
 
 /*############################################# */
 /* ====== 4. Functions With Multiple Args [04:28] ======= */
