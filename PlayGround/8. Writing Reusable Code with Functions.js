@@ -161,6 +161,63 @@ function findLargeNumber(x, y){
 /*############################################# */
 /* ====== 6. More on Return Values [09:02] ======= */
 /*############################################# */
+console.log(`
+/* ====== 6. More on Return Values [09:02] ======= */
+
+`);
+
+
+function isPurple(color){
+  if(color.toLowerCase() === 'purple'){
+    return true
+  }else{
+    return false
+  }
+
+}
+
+function isRed(color){
+  if(color.toLowerCase() === 'red'){
+    return true
+  }
+  return false
+}
+
+function isBlue(color){
+  return color.toLowerCase() === 'blue'
+}
+
+
+
+let multipleColors = ['blue', 'green', 'yellow', 'pink', 'purple', 'magenta']
+let multipleColorsOne = ['green', 'yellow', 'pink', 'blue']
+let multipleColorsTwo = ['magenta', 'yellow', 'pink', 'purple']
+
+
+function isColour(arr){
+  for(color of arr){
+    if(color === 'blue'){
+      return true
+    }else if(color === 'green'){
+      return true
+    }
+  }
+  return false
+}
+
+function isContain(arr){
+  for(let color of arr){
+    if(color === 'purple' || color === 'magenta'){
+      return true
+    }
+  }
+  return false
+}
+
+/* func jokhon akta 'executable RETURN' key pabe oita run kore
+   stop hoye jabe, tokhon she oi
+  return er porer kono code r execute korbe na...
+*/
 
 /*############################################# */
 /* ====== 7. Function Challenge 1 passwordValidator[13:10]  ======= */
