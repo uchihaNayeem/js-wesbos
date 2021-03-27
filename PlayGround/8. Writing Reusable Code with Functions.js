@@ -81,6 +81,30 @@ avg(newNum)
 /*############################################# */
 /* ====== 4. Functions With Multiple Args [04:28] ======= */
 /*############################################# */
+console.log(`
+/* ====== 4. Functions With Multiple Args [04:28] ======= */
+
+`);
+
+//single parametre
+function square(num){
+  console.log(num * num);
+}
+
+//double parametre
+function add(a, b){ 
+  console.log(a + b);
+}
+
+//double parametre,  
+function divide(a, b){
+console.log(a/b);
+}
+
+//ARGUMENTS must maintain PARAMETRES order, else result may change
+
+divide(1, 4) //0.25
+divide(4, 1) //4 
 
 /*############################################# */
 /* ====== 5. The Return Statement [05:09] ======= */
