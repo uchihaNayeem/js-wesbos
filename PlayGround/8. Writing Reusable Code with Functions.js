@@ -222,7 +222,19 @@ function isContain(arr){
 /*############################################# */
 /* ====== 7. Function Challenge 1 passwordValidator[13:10]  ======= */
 /*############################################# */
-
+/*
+  [ CHALLENGE
+    1. write a isValidPassword function
+    2. It accepts 2 arguments: password and username
+    3. Password Must:
+      - be at least 8 characters
+      - can contain spaces
+    4. if all the requirements are met, return true
+    5. otherwise, return false
+    isValidPassword('89jjlmns', 'dogLuvr') //true
+    isValidPassword('dogLuvr123!', 'dogLuvr') //false
+  ]
+*/
 function passValidator(pass){
   if(pass.includes('@')){
     return `@ is not valid `
