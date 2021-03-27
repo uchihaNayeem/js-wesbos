@@ -222,6 +222,20 @@ function isContain(arr){
 /*############################################# */
 /* ====== 7. Function Challenge 1 passwordValidator[13:10]  ======= */
 /*############################################# */
+
+function passValidator(pass){
+  if(pass.includes('@')){
+    return `@ is not valid `
+  }else if(pass.includes('#')){
+    return `# is not valid `
+  }else if(pass.includes('$') || pass.includes('&')){
+    return `not valid`
+  }else{
+    return `GOOD password`
+  }
+}
+
+
 /*
   [ CHALLENGE
     1. write a isValidPassword function
@@ -235,17 +249,34 @@ function isContain(arr){
     isValidPassword('dogLuvr123!', 'dogLuvr') //false
   ]
 */
-function passValidator(pass){
-  if(pass.includes('@')){
-    return `@ is not valid `
-  }else if(pass.includes('#')){
-    return `# is not valid `
-  }else if(pass.includes('$') || pass.includes('&')){
-    return `not valid`
+
+//My solution
+function isValidPassword(password, username){
+  if((password.length >= 8) && (!password.includes(username) ) ){
+    if(!password.includes(' ')){
+      return true
+    }else{
+      return false
+    }
   }else{
-    return `GOOD password`
+    return false
   }
 }
+
+
+// Colt's solution
+function isValidPasswordTwo(password, username){
+  if(password.length < 8){
+    return false
+  }else if(password.indexOf(' ') !== -1){
+    return false
+  }else if(password.indexOf(username) !== -1){
+    return false
+  }
+  return true
+}
+
+
 
 /*############################################# */
 /* ====== 8. Function Challenge 2 Average [03:19] ======= */
