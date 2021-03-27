@@ -109,6 +109,54 @@ divide(4, 1) //4
 /*############################################# */
 /* ====== 5. The Return Statement [05:09] ======= */
 /*############################################# */
+console.log(`
+/* ====== 5. The Return Statement [05:09] ======= */
+
+`);
+
+/*
+  [
+    1. return gives us the accual value.
+    2. we can use it later
+    3. 'console.log' & 'return' there are different
+    4. if we return a value, it can be stored in a VARIALBE
+    5. if we console.log() a value, it can NOT be stored in a VARIALBE
+  ]
+*/
+
+// 01 value of console.log cant be stored
+function againAdd(a, b){
+  console.log(a + b);
+}
+// the result of console.log doesnt store value in a variable
+const notAvailable = againAdd(10, 4) //undefined
+//gatch'AA => 14 is printed in console. 
+
+// 02 value of `return` can be stored in a variable  
+function againADD(a, b){
+  return a + b;
+}
+//the result of `return` can be stored in a variable.
+const available = againADD(1, 4) //5
+
+/*
+  [
+    1. you can use multiple return. 
+    2. BUT when one `return` finds ans, other `return` automatically
+      stops.
+    3. Which means we get only one result from a return
+  ]
+*/
+
+function findLargeNumber(x, y){
+  if(x > y){
+    return `${x} is larger than ${y}`
+  }else if(x<y){
+    return `${x} is smaller than ${y}`
+  }else if(x === y){
+    return `${x} and ${y} same number `
+  }
+}
 
 /*############################################# */
 /* ====== 6. More on Return Values [09:02] ======= */
