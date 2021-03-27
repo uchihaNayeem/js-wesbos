@@ -223,6 +223,18 @@ function isContain(arr){
 /* ====== 7. Function Challenge 1 passwordValidator[13:10]  ======= */
 /*############################################# */
 
+function passValidator(pass){
+  if(pass.includes('@')){
+    return `@ is not valid `
+  }else if(pass.includes('#')){
+    return `# is not valid `
+  }else if(pass.includes('$') || pass.includes('&')){
+    return `not valid`
+  }else{
+    return `GOOD password`
+  }
+}
+
 /*############################################# */
 /* ====== 8. Function Challenge 2 Average [03:19] ======= */
 /*############################################# */
