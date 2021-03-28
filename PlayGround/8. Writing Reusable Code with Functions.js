@@ -281,7 +281,36 @@ function isValidPasswordTwo(password, username){
 /*############################################# */
 /* ====== 8. Function Challenge 2 Average [03:19] ======= */
 /*############################################# */
+let myMarks = [0, 50]
+function makeAvarage(arr){
+  let sum = 0;
+  for(let num of arr){
+    sum += num;
+  }
+  let avg = sum / arr.length
+  return avg
 
+}
+
+function myAVG(arr){
+  let sum = 0;
+  for(let i=0; i<arr.length; i++){
+    sum += arr[i];
+  }
+  let avg = sum / arr.length
+  return avg
+}
+
+
+function avgForEach(arr){
+  let sum = 0
+  arr.forEach(number => {
+    sum += number
+  })
+
+  let avg = sum / arr.length
+  return avg
+}
 /*############################################# */
 /* ====== 9. Function Challenge 3 Pangrams [07:16] ======= */
 /*############################################# */
