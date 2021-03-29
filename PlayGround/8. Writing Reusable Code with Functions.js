@@ -311,10 +311,63 @@ function avgForEach(arr){
   let avg = sum / arr.length
   return avg
 }
+
+
 /*############################################# */
 /* ====== 9. Function Challenge 3 Pangrams [07:16] ======= */
 /*############################################# */
 
+/*
+  [
+    Qus: 'The quick brown fox jumps over the lazy dog' Does this includes
+          a-z all words OR is this a `pangram`??
+  ]
+*/
+
+function isPangram(sentence){
+  let vault = 'abcdefghijklmnopqrstuvwxyz'
+  
+  for(let char of vault){
+    if(!sentence.includes(char)){
+      return false
+    }
+  }
+  return true
+}
+
+console.log(isPangram('The quick brown fox jumps over the lazy dog'));
+
+/*
+  [
+    1. RUN (for...of) loop over 'vault'
+    2. 'char' represents only one word from 'vault'
+    3. inside loop:
+            i. !'hello'.includes('a') 
+           ii. gives true, Means condition true
+          iii. return us false
+    4. if the condition false it will it will
+        not execute 'return false' and get out from the loop
+    5. gives us 'true'
+  ]
+*/
+
+
+console.clear()
 /*############################################# */
 /* ====== 10. Function Challenge 4 Get Playing Card [12:13] ======= */
 /*############################################# */
+
+/*
+  [
+     Write a getCard() function which returns a random playing card object, like:
+   		{
+  			value: 'K'
+  			suit: 'clubs'
+  		}
+     Pick a random value from:
+    ----1,2,3,4,5,6,7,8,9,10,J,Q,K,A
+     Pick a random suit from:
+    ----clubs,spades, hearts, diamonds
+     Return both in an object
+  ]
+*/
