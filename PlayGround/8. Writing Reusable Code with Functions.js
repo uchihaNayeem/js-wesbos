@@ -371,12 +371,17 @@ console.clear()
      Return both in an object
   ]
 */
+function getRandom(arr){
+  let idx =  Math.floor(Math.random() * arr.length);
+  return idx
+}
+
 function getCard(){
   let value = ['1','2','3','4','5','6','7','8','9','10','J','Q','K','A']
-  let valueIdx = Math.floor(Math.random() * value.length);
+  let valueIdx = getRandom(value)
   let myValue =  value[valueIdx]
   let card = ['clubs','spades', 'hearts', 'diamonds']
-  let cardIdx = Math.floor(Math.random() * card.length);
+  let cardIdx = getRandom(card)
   let myCard = card[cardIdx]
-  return {key , valye} = {myValue,myCard}
+  return {key , value} = {myValue,myCard}
 }
