@@ -14,6 +14,17 @@ function myAvrg(arr){
   return avg
 }
 
+function isItPangram(sec){
+  let vault = 'abcdefghijklmnopqrstuvwxyz'
+  for(let char of vault){
+    if(!sec.includes(char)){
+      return false
+    }
+  }
+  return true
+}
+
+
 
 
 
