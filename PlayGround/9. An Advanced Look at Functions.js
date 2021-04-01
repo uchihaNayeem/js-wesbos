@@ -3,6 +3,22 @@ console.log(`9. An Advanced Look at Functions`);
 /*###################################*/
 /* ====== 1. Function Scope [07:01] ====== */
 /*###################################*/
+
+// https://www.youtube.com/watch?v=5aSvDIOSa7M
+function myAvrg(arr){
+  let sum = 0;
+  for(let i=0; i<arr.length; i++){
+    sum += arr[i];
+  }
+  let avg = sum / arr.length
+  return avg
+}
+
+
+
+
+
+
 /*######################################*/
 /* ====== 2. Block Scope [12:07] ====== */
 /*######################################*/

@@ -352,7 +352,7 @@ console.log(isPangram('The quick brown fox jumps over the lazy dog'));
 */
 
 
-console.clear()
+
 /*############################################# */
 /* ====== 10. Function Challenge 4 Get Playing Card [12:13] ======= */
 /*############################################# */
