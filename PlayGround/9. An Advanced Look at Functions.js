@@ -24,7 +24,7 @@ function isItPangram(sec){
   return true
 }
 
-
+console.log(isItPangram('The quick brown fox jumps over the lazy dog'));
 
 
 
