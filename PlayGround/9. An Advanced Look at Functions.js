@@ -5,26 +5,43 @@ console.log(`9. An Advanced Look at Functions`);
 /*###################################*/
 
 // https://www.youtube.com/watch?v=5aSvDIOSa7M
-function myAvrg(arr){
-  let sum = 0;
-  for(let i=0; i<arr.length; i++){
-    sum += arr[i];
-  }
-  let avg = sum / arr.length
-  return avg
-}
 
-function isItPangram(sec){
-  let vault = 'abcdefghijklmnopqrstuvwxyz'
-  for(let char of vault){
-    if(!sec.includes(char)){
-      return false
-    }
-  }
-  return true
-}
 
-console.log(isItPangram('The quick brown fox jumps over the lazy dog'));
+
+//These variables are SCOPED to the function
+function lol() {
+  let person = 'Tom';
+  const age = 45;
+  var color = 'teal';
+  console.log(age);
+}
+// These variables are SCOPED to changeColor()
+function changeColor() {
+  let color = 'purple';
+  const age = 19;
+  console.log(age);
+}
+lol();
+changeColor();
+age; //DOES NOT EXIST!
+color; //DOES NOT EXIST!
+person; //DOES NOT EXIST!
+
+
+let bird = 'mandarin duck';
+
+function birdWatch() {
+  //this bird is scoped to birdWatch()
+  let bird = 'golden pheasant';
+  console.log(bird); //"golden pheasant"
+}
+birdWatch();
+console.log(bird); //"mandarin duck"
+
+
+
+
+
 
 
 
