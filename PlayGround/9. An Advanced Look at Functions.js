@@ -50,6 +50,31 @@ console.log(bird); //"mandarin duck"
 /*######################################*/
 /* ====== 2. Block Scope [12:07] ====== */
 /*######################################*/
+
+
+// let & const are BLOCK SCOPED
+if (true) {
+  const animal = 'eel';
+  console.log(animal); //'eel'
+}
+console.log(animal); //NOT DEFINED!
+
+// VAR IS NOT BLOCK SCOPED
+if (true) {
+  var animal = 'eel';
+  console.log(animal); //'eel'
+}
+console.log(animal); //'eel'
+
+// let animals = ['grizzly bear', 'panda bear', 'spectacled bear'];
+// var i = 10;
+// for (var i = 0; i < animals.length; i++) {
+//   console.log(i, animals[i])
+// }
+// console.log(i)
+
+
+
 /*###################################*/
 /* ====== 3. Lexical Scope [06:36] ====== */
 /*###################################*/
