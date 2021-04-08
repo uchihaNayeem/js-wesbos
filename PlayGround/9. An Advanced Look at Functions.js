@@ -1,196 +1,384 @@
-console.log(`9. An Advanced Look at Functions`);
 
 /*###################################*/
 /* ====== 1. Function Scope [07:01] ====== */
 /*###################################*/
+console.log(`
+====== 1. Function Scope [07:01] ======
 
-// https://www.youtube.com/watch?v=5aSvDIOSa7M
+`);
 
+/*
+  [
+    1.This is function scope, the variable created INSIDE of a function
+      not available OUTSIDE of that function.
+    2. 
+  ]
+*/
 
-
-//These variables are SCOPED to the function
+//
 function lol() {
-  let person = 'Tom';
-  const age = 45;
-  var color = 'teal';
-  console.log(age);
+  var name = 'olodama';
+  const age = 40;
+  let power = 'rasengan';
+  console.log(age); 
 }
-// These variables are SCOPED to changeColor()
-function changeColor() {
-  let color = 'purple';
-  const age = 19;
-  console.log(age);
+
+
+function changeColor(){
+  var color = 'black';
+  const age = 23232;
+  let power = 'rasengan';
+  console.log(age); 
 }
-lol();
-changeColor();
-age; //DOES NOT EXIST!
-color; //DOES NOT EXIST!
-person; //DOES NOT EXIST!
 
+let age = 30000;
+console.log(age);
+lol()
+changeColor()
 
-let bird = 'mandarin duck';
+//another example
 
-function birdWatch() {
-  //this bird is scoped to birdWatch()
-  let bird = 'golden pheasant';
-  console.log(bird); //"golden pheasant"
+let bird = 'Articuno';
+
+function birdWatch(){
+  let bird = 'zapdos';
+  console.log(bird);
 }
-birdWatch();
-console.log(bird); //"mandarin duck"
 
-
-
-
-
-
-
-
+birdWatch()
+console.log(bird);
 
 
 /*######################################*/
 /* ====== 2. Block Scope [12:07] ====== */
 /*######################################*/
+console.log(`
+====== 2. Block Scope [12:07] ======
+
+`);
 
 
-// let & const are BLOCK SCOPED
-if (true) {
-  const animal = 'eel';
-  console.log(animal); //'eel'
+/*
+  [
+    1." { } " This is called block
+    2. We use block in For loop, while loop etc.
+    3. NOTE: Object '{}' are not block
+    4. 'let' & 'const' are BLOCK scoped. They are not available outside
+       of that block.
+    5. 'var' is NOT a block scope. 'var is available outside of that
+       scope.
+    
+  ]
+*/
+
+if(true){
+  let namai = 'ologama';
+  const powerione = 'rasengan';
+  var clan = 'leaf';
+  console.log(namai);
+  console.log(powerione);
+  console.log(clan);
 }
-console.log(animal); //NOT DEFINED!
 
-// VAR IS NOT BLOCK SCOPED
-if (true) {
-  var animal = 'eel';
-  console.log(animal); //'eel'
+console.log(clan);
+
+//another example
+let animal = ['tiger', 'panther', 'caracal'];
+
+var i = 10;
+for(var i = 0; i < animal.length; i++){
+  console.log(animal[i]);
 }
-console.log(animal); //'eel'
+console.log(i);
 
-// let animals = ['grizzly bear', 'panda bear', 'spectacled bear'];
-// var i = 10;
-// for (var i = 0; i < animals.length; i++) {
-//   console.log(i, animals[i])
-// }
-// console.log(i)
+// very confusing behavior of VAR .
+var real = 10;
+console.log(real);
+var real = 20;
+console.log(real);
+
+
+//another example
+
+function makeDouble(arr){
+  let newArr = []
+  for(num of arr){
+    let double = num * num;
+    newArr.push(double)
+  }
+  console.log(newArr);
+}
 
 
 
 /*###################################*/
 /* ====== 3. Lexical Scope [06:36] ====== */
 /*###################################*/
+console.log(`
+====== 3. Lexical Scope [06:36] ======
 
-function outer() {
-  let movie = 'Amadeus';
+`);
 
-  function inner() {
-    // let movie = "The Shining";
+//i know what's going on here
 
-    function extraInner() {
-      //movie is not defined in this function
-      //but it has access to parent function's variables
-      console.log(movie.toUpperCase())
+function outer(){
+  let movie = 'amaterasu';
+  function middle(){
+    let movie = 'Naruto';
+    // console.log(movie.toLocaleUpperCase());
+    function inner(){
+      let movie = 'Uchiha';
+      console.log(movie.toLocaleUpperCase());
     }
-    extraInner();
+    inner()
   }
-  inner();
+  middle();
 }
 
-outer(); //'AMADEUS'
+
+outer();
+
 
 /*###################################*/
 /* ====== 4. Function Expressions [05:40] ====== */
 /*###################################*/
-// Function Statement
-function add(x, y) {
-  return x + y;
+console.log(`
+====== 4. Function Expressions [05:40] ======
+
+`);
+
+// ===== functions are OBJECTS O.O ========
+
+// a normal function or ( function STATEMENT )
+function add(x, y){
+  return x + y
 }
 
-// Function Expression (Anonymous)
-const sum = function (x, y) {
-  return x + y;
+console.log(add(12, 3));
+
+// function expression (NO name after function)
+const sum = function(x, y){ 
+  return x + y
 }
 
-// Function Expression (Named)
-const product = function multiply(x, y) {
-  return x * y;
+console.log(sum(102, 3));
+
+//another function expression (HAS name after function)
+const value = function multiply(x, y){
+  return x * y
 }
+
+console.log(value(12,12));
+
+
+
 /*###################################*/
 /* ====== 5. Higher Order Functions [07:19] ====== */
 /*###################################*/
-function add(x, y) {
-  return x + y;
+console.log(`
+====== 5. Higher Order Functions [07:19] ======
+
+`);
+
+
+/*
+  [
+    1. we can use use functions as a value of an Array or an Object.
+    2. if we store funtion in an array we can loop over it.
+       we can use those dynamicly.
+    3. if we store a function in an object as a value. those are
+       called METHOD
+    3. A method is a function associated with an object property.
+  ]
+*/
+
+
+// four different Functions
+
+function addition(x, y){
+ return x + y
 }
 
-const subtract = function (x, y) {
-  return x - y;
+const subtraction = function(x, y){
+ return x - y
 }
 
-function multiply(x, y) {
-  return x * y;
+let multiplication = function muliply(x, y){
+ return x * y
 }
 
-const divide = function (x, y) {
-  return x / y;
+const division = function (x, y){
+ return x / y
 }
 
-//We can store functions in an array!
-const operations = [add, subtract, multiply, divide];
+// function stored in an ARRAY
+let oparation = [addition, subtraction, multiplication, division];
 
-//Loop over all the functions in operations
-for (let func of operations) {
-  let result = func(30, 5); //execute func!
-  console.log(result);
+// using with array index
+oparation[0](12, 3) // 15
+oparation[1](12, 3) // 9
+oparation[2](12, 3) // 36
+oparation[3](12, 3) // 4
+
+
+//dynamiclly using function
+for(func of oparation){
+ let result = func(12, 3);
+ console.log(result);
 }
 
-// We can also store functions in objects!
-const thing = {
-  doSomething: multiply
+
+//function using in an OBJECTS (storing func as Value of some key)
+
+let actions = { 
+  someADD: addition, // these are also methods
+  someSUBS: subtraction,
+  someMULTIPLY: multiplication,
+  someDIVIDE: division
 }
-thing.doSomething(4, 5) //20
+
+// using by getting object keys
+actions.someADD(12,3) //15
+actions.someSUBS(12,3) // 9
+actions.someMULTIPLY(12,3) // 36
+actions.someDIVIDE(12,3) //4
+
+
+
 /*###################################*/
 /* ====== 6. Functions as Arguments [07:23] ====== */
 /*###################################*/
-// This function accepts another function as an argument
-function callThreeTimes(f) {
-  //And calls it 3 times:
-  f();
-  f();
-  f();
+console.log(`
+====== 6. Functions as Arguments [07:23] ======
+
+`);
+
+/*
+  [
+    1. Higher Order function:
+          -Function that operate on/with other function.
+          - They can: * Accept other function as Arguments
+                      * Return a function.
+  ]
+*/
+
+
+// passing function as arument (this is used commonly)
+
+
+function callItThrice(func){
+  func();
+  func();
+  func();
 }
 
-function cry() {
-  console.log("BOO HOO I'M SO SAD!");
+
+function cry(){
+  console.log(`uhuuu hu hu hu i'm crying`);
 }
 
-function rage() {
-  console.log("I HATE EVERYTHING!");
+function laugh(){
+  console.log(`haha I'm laughingg`);
 }
 
-function repeatNTimes(action, num) {
-  // call action (a function) num number of times
-  for (let i = 0; i < num; i++) {
-    action();
+function runNtime(action, num){
+  for(let i = 0; i < num; i++){
+    action()
   }
 }
 
-repeatNTimes(rage, 13);
 
-// Accepts 2 functions as arguments
-// Randomly selects 1 to execute
-function pickOne(f1, f2) {
+//another example (randomly run one function)
+
+function pickOne(f1, f2){
   let rand = Math.random();
-  if (rand < 0.5) {
-    f1();
-  } else {
-    f2();
+  console.log(rand);
+  if(rand < 0.5){
+    f1()
+  }else{
+    f2()
   }
 }
+
+
+
+
 /*###################################*/
 /* ====== 7. Functions as Return Values [13:21] ====== */
 /*###################################*/
+console.log(`
+====== 7. Functions as Return Values [13:21] ======
+
+`);
+
+
+/*
+  [
+    1. a function returns a function.
+    2. returned function captured in a variable, which acts like a fuction.
+  ]
+*/
+
+function multiplyBy(num){
+  return function(x){
+    return x * num
+  }
+}
+
+let double = multiplyBy(2);
+let triple = multiplyBy(3);
+
+
+// another example
+
+function checkAgeLimit(min, max){
+  return function(age){
+    return age >= min && age <= max
+  }
+}
+
+let isChild = checkAgeLimit(0, 18);
+let isAdult = checkAgeLimit(18, 28);
+let isOld = checkAgeLimit(40, 100);
+
+
 /*###################################*/
 /* ====== 8. Callbacks [08:19] ====== */
 /*###################################*/
+
+
+// the func taken as arg in setTimeout is 'callback'
+setTimeout(function(){
+  console.log(`booo how there XD`);
+}, 5000)
+
+/* 
+//the func taken as arg in addEventListener is 'callback'
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function(){
+  alert('I said not to click XD')
+})
+
+*/
 /*###################################*/
 /* ====== 9. Hoisting [08:10] ====== */
 /*###################################*/
+
+
+// youre not allowed to see the result before declaraton
+
+// console.log(shrimp); 
+let shrimp = 'Harlequin Shrimp'
+console.log(shrimp);
+
+
+
+// Functions are HOISTED this can be called. becase
+//javascript first runs whats inside of a function. 
+
+scareMe();
+
+function scareMe(){
+  console.log(`helloooo i'm ghost`);
+}
