@@ -1,4 +1,3 @@
-console.log(`10. Apply Functions to Collections of Data`);
 
 /* total 1h 42m */
 
@@ -22,6 +21,108 @@ console.log(`10. Apply Functions to Collections of Data`);
 /*##############################################################*/
 /* ======= 2. forEach 08:06 ======= */
 /*##############################################################*/
+console.log(`
+======= 2. forEach 08:06 =======
+
+`);
+
+/*
+  [
+    Syntax:
+        - arr.forEach(function(eachElement, index){
+            clg(index, eachElement)
+          });
+          NOTE: index arg is optional.
+
+    1. forEach gives 'each' element form the arr
+    2. It take two arguments([each element], [index]).
+    
+  ]
+*/
+
+//arr os numbers AND arr of objects
+let someNumbers = [12, 13, 14, 34, 64, 56, 87, 34, 87, 34, 86];
+let someBooks = [
+  {
+    name: 'you dont know JS',
+    author: 'gatify',
+    year: 2020
+  },
+  {
+    name: 'game of throne',
+    author: 'naruto',
+    year: 1990
+  },
+  {
+    name: 'JAVA beginners',
+    author: 'olodama',
+    year: 2010
+  },
+  {
+    name: 'how to fly',
+    author: 'lasengan',
+    year: 2015
+  },
+]
+
+
+
+//01
+someNumbers.forEach( (eachNum, idx) => {
+ console.log(idx, eachNum); 
+})
+
+console.log(`________________`);
+
+//02
+someNumbers.forEach(function(num){
+  console.log(num * 2 );
+})
+
+console.log(`________________`);
+//03
+for(let i = 0; i< someNumbers.length; i++){
+  console.log(i, someNumbers[i]);
+}
+
+console.log(`________________`);
+
+//04
+for(let num of someNumbers){
+  console.log(num);
+}
+
+console.log(`________________`);
+
+//05
+someBooks.forEach(function(n, idx){
+  console.log(idx, n.name.toUpperCase());
+  console.log(idx, n.author.toUpperCase());
+})
+
+console.log(`________________`);
+
+//06
+function capture(n){
+  console.log(`name: ${n.name}`);
+}
+
+someBooks.forEach(capture)
+
+console.log(`________________`);
+
+//07
+
+for(let book of someBooks){
+  console.log(book.year);
+}
+
+console.log(`________________`);
+
+//08
+for(let i = 0; i< someBooks.length; i++){
+  console.log(i, someBooks[i].author);
+}
 
 
 
@@ -29,19 +130,293 @@ console.log(`10. Apply Functions to Collections of Data`);
 /*##############################################################*/
 /* ======= 3. Map 11:11 ======= */
 /*##############################################################*/
+console.log(`
+======= 3. Map 11:11 =======
+
+`);
+
+
+/*
+  [
+    syntax:
+            arr.map(n =>{
+              return n + 2
+            })
+      1. Map gives us a new ARRAY.
+      2. map runs on array, It takes a callback func.
+         And returns a new array.
+      3. You have to use 'return'
+      4. use: create a copy of array,
+              Modify the array, make double from number of array,
+              Return a portion of array,
+              Return a array of objects.
+      5. sometimes we need a portion of array from a very big
+         array object, and there we'll use map
+  ]
+*/
+
+let aNums = [12, 23, 34, 45, 65, 76, 78, 98, 78,53, 65, 68, 42];
+let aWords = ['asap', 'lol', 'lmoa', 'olodama'];
+
+//01 creating new array containing doubles numbers
+let aDouble = aNums.map((num) =>{
+  return num * 2
+})
+console.log(aDouble);
+
+// it takes a arr of numbers & returns a arr of Objects
+let bNums = aNums.map(n=>{
+  return n % 2 === 0 ? {even: n} : {odd: n}
+})
+
+//====== same with Loop
+//for...of
+let doubleArr = [];
+for(let num of aNums){
+  doubleArr.push(num *2)
+}
+//for
+let doubleArr2 = []
+for(let i = 0; i < aNums.length; i++){
+  doubleArr2.push(aNums[i] * 2)
+}
+
+
+//02 creating a array of objects containing parity(odd/even) numbers
+let parityCheck = aNums.map((num) =>{
+  return{
+    number: num,
+    isEven: num % 2 === 0,
+    parity: num % 2 === 0 ? 'Even' : 'Odd'
+  }
+})
+
+console.log(parityCheck);
+
+//03 modify a string of array.
+
+let modifyString = aWords.map((w) =>{
+  return w.toUpperCase().split('').join('.')
+})
+console.log(modifyString);
+
+//NOTE: 'split' is string method, returns array of EACH word/index
+//      'join' is string method, it joins all string index.   
+
+
+
+
+
+//04 Take a PORTION from an array of objects
+
+let bMovies = [
+  {
+    name: 'Upload',
+    year: 2021,
+    rating: 7.4
+  },
+  {
+    name: 'Game Of throne',
+    year: 2011,
+    rating: 9.4
+  },
+  {
+    name: 'Breaking Bad',
+    year: 2014,
+    rating: 9
+  },
+  {
+    name: 'Better Call Saul',
+    year: 2021,
+    rating: 3
+  },
+  {
+    name: 'Naruto',
+    year: 2001,
+    rating: 9
+  },
+]
+
+//make a new array of names
+let movieTitles = bMovies.map(n =>{
+  return n.name.toUpperCase()
+})
+console.log(movieTitles);
+
+//make a array object of only year
+let moviesYear = bMovies.map(n =>{
+  return{
+    year: `${n.year} rating: ${n.rating}`
+  }
+})
+
+
+console.log(moviesYear);
+
 
 
 /*##############################################################*/
 /* ======= 4. Arrow Functions Intro 06:14 ======= */
 /*##############################################################*/
+console.log(`
+======= 4. Arrow Functions Intro 06:14 =======
+
+`);
+
+// I know what arrow function is :D...
+
+// normal anon function
+let square1 = function(n){
+  return n * 2
+}
+
+//arrow function 01
+let square = (n) =>{
+  return n * 2
+}
+
+//arrow function 02
+let sum = n =>{
+  return n + 2
+}
+
+//arrow function 03
+let multiply = (x, y) =>{
+  return x * y
+}
+
+//arrow function 04
+let meh = () => {
+  return `parity means odd/even`
+}
+//arrow function 04
+let meh1 = () => {
+  return {
+    name: 'Game of thrones',
+    year: 2001
+  }
+}
+
+
 
 /*##############################################################*/
 /* ======= 5. Arrow Functions Implicit Returns 09:31 ======= */
 /*##############################################################*/
+console.log(`
+======= 5. Arrow Functions Implicit Returns 09:31 =======
 
+`);
+
+
+/*
+  [
+    1. Implicit Returns means, function will return without having
+       the 'return' keyword
+  ]
+*/
+
+
+// () this means implicit return
+let sum1 = (n) => (
+  n + n
+)
+
+// in line implicit return
+let sum2 = n => n * n
+
+
+// using conditional in implicit return
+
+let dNum = [12, 34, 45, 15, 36, 55, 87, 34, 56, 67]
+
+let dMultiply = dNum.map(n =>(
+  n % 2 === 0 ? 'even' : 'odd'
+))
+
+let dMultiply1 = dNum.map(n =>(
+  n % 2 === 0 ? {isEven: true} : {inEven: false}
+))
+
+console.log(dMultiply, dMultiply1);
+
+
+console.clear()
 /*##############################################################*/
 /* ======= 6. Array.find 06:12 ======= */
 /*##############################################################*/
+
+
+
+/*
+  [
+    1. 
+  ]
+*/
+
+
+let sMovies = [
+  "The Fantastic Mr. Fox",
+  "Mr. and Mrs. Smith",
+  "Mrs. Doubtfire",
+  "Mr. Deeds"
+]
+
+const sBooks = [{
+  title: 'Good Omens',
+  authors: ['Terry Pratchett', 'Neil Gaiman'],
+  rating: 4.25
+},
+{
+  title: 'Bone: The Complete Edition',
+  authors: ['Jeff Smith'],
+  rating: 4.42
+},
+{
+  title: 'American Gods',
+  authors: ['Neil Gaiman'],
+  rating: 4.11
+},
+{
+  title: 'A Gentleman in Moscow',
+  authors: ['Amor Towles'],
+  rating: 4.36
+}
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*##############################################################*/
 /* ======= 7. Filter 10:05 ======= */
