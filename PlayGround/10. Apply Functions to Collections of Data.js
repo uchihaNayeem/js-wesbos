@@ -1,3 +1,4 @@
+console.log(`10. Apply Functions to Collections of Data`);
 
 /* total 1h 42m */
 
@@ -36,6 +37,8 @@ console.log(`
 
     1. forEach gives 'each' element form the arr
     2. It take two arguments([each element], [index]).
+    3. index arg is optional.
+
     
   ]
 */
@@ -144,7 +147,7 @@ console.log(`
             })
       1. Map gives us a new ARRAY.
       2. map runs on array, It takes a callback func.
-         And returns a new array.
+         And RETURNS a new array.
       3. You have to use 'return'
       4. use: create a copy of array,
               Modify the array, make double from number of array,
@@ -316,7 +319,7 @@ console.log(`
 */
 
 
-// () this means implicit return
+// () -> this means implicit return
 let sum1 = (n) => (
   n + n
 )
@@ -340,7 +343,7 @@ let dMultiply1 = dNum.map(n =>(
 console.log(dMultiply, dMultiply1);
 
 
-console.clear()
+
 /*##############################################################*/
 /* ======= 6. Array.find 06:12 ======= */
 /*##############################################################*/
@@ -349,7 +352,9 @@ console.clear()
 
 /*
   [
-    1. 
+    1. When we run the .find in an array,
+      it returns when it finds its match.
+    2. see the example below
   ]
 */
 
@@ -360,6 +365,18 @@ let sMovies = [
   "Mrs. Doubtfire",
   "Mr. Deeds"
 ]
+
+// Find FIRST movie that includes 'Mrs' in its title:
+let movieTitle = sMovies.find(n => {
+  return n.includes('Mrs')
+})
+console.log(movieTitle);
+
+//Find first movie that begins with 'Mrs':
+let firstTitle = sMovies.find(n =>{
+  return n.indexOf('Mrs') === 0
+})
+console.log(firstTitle);
 
 const sBooks = [{
   title: 'Good Omens',
@@ -380,6 +397,109 @@ const sBooks = [{
   title: 'A Gentleman in Moscow',
   authors: ['Amor Towles'],
   rating: 4.36
+}
+]
+
+//Find first book w/ rating over 4.3
+
+let highRating = sBooks.find( n =>{
+  if(n.rating > 4.3 ){
+    return n.title
+  }
+} )
+
+console.log(highRating);
+
+
+
+//Find first book w/ rating over 4.3
+const goodBook = sBooks.find(b => b.rating >= 4.3);
+
+//Find first book with Neil Gaiman as an author:
+const neilBook = sBooks.find(b => (
+  b.authors.includes('Neil Gaiman')
+))
+
+
+console.log(goodBook, neilBook);
+
+
+
+
+console.clear()
+/*##############################################################*/
+/* ======= 7. Filter 10:05 ======= */
+/*##############################################################*/
+console.log(`
+======= 7. Filter 10:05 =======
+
+`);
+
+
+
+let oNums = [12, 13, 15, 63, 74, 23, 65, 75, 34, 67, 85,23]
+
+
+
+let oOdd = oNums.filter( n => n % 2 === 1)
+let oEven = oNums.filter( n => n % 2 === 0)
+
+
+
+
+const oBooks = [{
+  title: 'Good Omens',
+  authors: ['Terry Pratchett', 'Neil Gaiman'],
+  rating: 4.25,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'Changing My Mind',
+  authors: ['Zadie Smith'],
+  rating: 3.83,
+  genres: ['nonfiction', 'essays']
+},
+{
+  title: 'Bone: The Complete Edition',
+  authors: ['Jeff Smith'],
+  rating: 4.42,
+  genres: ['fiction', 'graphic novel', 'fantasy']
+},
+{
+  title: 'American Gods',
+  authors: ['Neil Gaiman'],
+  rating: 4.11,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'A Gentleman in Moscow',
+  authors: ['Amor Towles'],
+  rating: 4.36,
+  genres: ['fiction', 'historical fiction']
+},
+{
+  title: 'The Name of the Wind',
+  authors: ['Patrick Rothfuss'],
+  rating: 4.54,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'The Overstory',
+  authors: ['Richard Powers'],
+  rating: 4.19,
+  genres: ['fiction', 'short stories']
+},
+{
+  title: 'The Way of Kings',
+  authors: ['Brandon Sanderson'],
+  rating: 4.65,
+  genres: ['fantasy', 'epic']
+},
+{
+  title: 'Lord of the flies',
+  authors: ['William Golding'],
+  rating: 3.67,
+  genres: ['fiction']
 }
 ]
 
@@ -409,18 +529,6 @@ const sBooks = [{
 
 
 
-
-
-
-
-
-
-
-
-
-/*##############################################################*/
-/* ======= 7. Filter 10:05 ======= */
-/*##############################################################*/
 
 /*##############################################################*/
 /* ======= 8. Some & Every 06:20 ======= */
