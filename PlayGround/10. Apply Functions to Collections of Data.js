@@ -426,7 +426,7 @@ console.log(goodBook, neilBook);
 
 
 
-console.clear()
+
 /*##############################################################*/
 /* ======= 7. Filter 10:05 ======= */
 /*##############################################################*/
@@ -434,16 +434,25 @@ console.log(`
 ======= 7. Filter 10:05 =======
 
 `);
+/*
+  [ 
+    1. filter takes a callback func OR test function.
+    2. the given func is a boolean condition.
+    3. based on the condition it (automatically) returns a NEW ARRAY
+    3. when the condition is TRUE, filter RETURNS new array
+    NOTE: Filter RETURNS new ARRAY
+  ]
+*/
 
 
 
 let oNums = [12, 13, 15, 63, 74, 23, 65, 75, 34, 67, 85,23]
 
 
-
-let oOdd = oNums.filter( n => n % 2 === 1)
+// 01 give a new array of odd & even number
+let oOdd = oNums.filter( n => n % 2 === 1) 
 let oEven = oNums.filter( n => n % 2 === 0)
-
+console.log(oOdd, oEven);
 
 
 
@@ -503,36 +512,104 @@ const oBooks = [{
 }
 ]
 
+// 02 get the book which has rating 4.37 or higher
+const highRatingBooks = oBooks.filter(n =>{
+  return n.rating >=4.37
+})
+//new array based on filter condition
+console.log(highRatingBooks); 
+
+//getting the title & rating from NEW array
+for (book of highRatingBooks){
+  console.log(book.title, book.rating);
+}
 
 
 
+//get the books who has [genres of fiction]
+let oGenres = oBooks.filter(n =>{
+  return n.genres.includes('fiction') //&& n.genres.includes('fantasy')
+})
+
+//this the returned new array 
+console.log(oGenres); 
+
+for (book of oGenres){
+  console.log(book.title, book.genres);
+}
 
 
+//03
+let query = 'The'
+let oResult = oBooks.filter(n =>{
+  let title = n.title.toLowerCase()
+  console.log(title);
+  return title.includes(query.toLowerCase())
+})
 
 
+console.log(oResult);
+
+console.log(`__________________`);
+// 04
+function bookSearch(query){
+  let oResult = oBooks.filter(n =>{
+    let title = n.title.toLowerCase()
+    return title.includes(query.toLowerCase())
+  })
+  return oResult
+}
+
+console.log(bookSearch('the'));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.clear()
 /*##############################################################*/
 /* ======= 8. Some & Every 06:20 ======= */
 /*##############################################################*/
+console.log(`
+======= 8. Some & Every 06:20 ======= 
+
+`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
