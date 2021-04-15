@@ -694,7 +694,18 @@ console.log(`
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
 /*##############################################################*/
+const prices = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
+// REMEMBER THAT SORT() MUTATES THE ORIGINAL ARRAY!
+// I'm using slice() to create a new copy, otherwise we would be sorting the same array 3 times:
 
+// Default string sort :( 
+const badSort = prices.slice().sort();
+
+// Ascending Sort:
+const ascSort = prices.slice().sort((a, b) => a - b);
+
+// Descending Sort:
+const descSort = prices.slice().sort((a, b) => b - a);
 /*##############################################################*/
 /* ======= 10. Reduce Intro 08:49 ======= */
 /*##############################################################*/
