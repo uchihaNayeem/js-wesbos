@@ -694,22 +694,34 @@ console.log(`
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
 /*##############################################################*/
-const prices = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
+const mPrice = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
 // REMEMBER THAT SORT() MUTATES THE ORIGINAL ARRAY!
 // I'm using slice() to create a new copy, otherwise we would be sorting the same array 3 times:
 
 // Default string sort :( 
-const badSort = prices.slice().sort();
+const badSort = mPrice.slice().sort();
 
 // Ascending Sort:
-const ascSort = prices.slice().sort((a, b) => a - b);
+const ascSort = mPrice.slice().sort((a, b) => a - b);
 
 // Descending Sort:
-const descSort = prices.slice().sort((a, b) => b - a);
+const descSort = mPrice.slice().sort((a, b) => b - a);
 /*##############################################################*/
 /* ======= 10. Reduce Intro 08:49 ======= */
 /*##############################################################*/
+const jNums = [3, 4, 5, 6, 7];
+// To multiply all values in jNums:
+const product = jNums.reduce((total, currentVal) => {
+  return total * currentVal;
+});
 
+// total    currentVal    returnVal
+// 3             4           12
+// 12            5           60
+// 60            6           360
+// 360           7           2520
+
+//Final Return Value: 2520
 /*##############################################################*/
 /* ======= 11. Reduce Pt. 2 08:55 ======= */
 /*##############################################################*/
