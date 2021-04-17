@@ -347,8 +347,10 @@ console.log(dMultiply, dMultiply1);
 /*##############################################################*/
 /* ======= 6. Array.find 06:12 ======= */
 /*##############################################################*/
+console.log(`
+======= 6. Array.find 06:12 ======= 
 
-
+`);
 
 /*
   [
@@ -416,7 +418,7 @@ console.log(highRating);
 const goodBook = sBooks.find(b => b.rating >= 4.3);
 
 //Find first book with Neil Gaiman as an author:
-const neilBook = sBooks.find(b => (
+const neilBook = sBooks.find(b => ( // () 🠔 means explicit return
   b.authors.includes('Neil Gaiman')
 ))
 
@@ -539,7 +541,7 @@ for (book of oGenres){
 }
 
 
-//03
+//03 based 'query' we get the result
 let query = 'The'
 let oResult = oBooks.filter(n =>{
   let title = n.title.toLowerCase()
@@ -563,7 +565,21 @@ function bookSearch(query){
 console.log(bookSearch('the'));
 
 
-console.clear()
+//mimick a search
+
+function searchQuerying(str) {
+  let mystr = str.toLowerCase()
+  let search
+ return search = oBooks.filter(b =>(
+    b.title.toLowerCase().includes(mystr)
+  ))
+
+ 
+
+}
+
+
+
 /*##############################################################*/
 /* ======= 8. Some & Every 06:20 ======= */
 /*##############################################################*/
@@ -571,276 +587,240 @@ console.log(`
 ======= 8. Some & Every 06:20 ======= 
 
 `);
+ 
+/*
+  [
+    every:
+          1. every() takes a callback
+          2. Callback is a test function.
+          3. every RETURNS boolean.
+          4. when every run on an array,
+             it checks the condition for each to be TRUE
+          5. if the conditon is false for one element,
+             it returns false
+          6.just like the && operator
+          7. to get TRUE, The condition has to be true for each ELEMENT
+    some:
+          1. some() takes a callback
+          2. Callback is a test function.
+          3. some RETURNS boolean.
+          4. when some run on an array,
+             it checks the condition for ONLY one element to be TRUE
+          5. if the conditon is true for one element,
+             it returns true
+          6.just like the || operator.
+          7. to get TRUE, The condition has to be true for any one ELEMENT
+
+        
+  ]
+*/
+
+let wordWithOG = ['bog', 'fog', 'hog', 'log', 'nog', 'dog'  ];
+
+//01 
+let isEveryWordLength3 = wordWithOG.every( e =>(
+  e.length === 3 && e.includes('og')
+))
+
+//02
+let isAnyWordHas = wordWithOG.some( s=>(
+  s.includes('iog')
+))
+
+console.log(isEveryWordLength3, isAnyWordHas);
+
+const uBooks = [{
+  title: 'Good Omens',
+  authors: ['Terry Pratchett', 'Neil Gaiman'],
+  rating: 4.25,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'Changing My Mind',
+  authors: ['Zadie Smith'],
+  rating: 3.83,
+  genres: ['nonfiction', 'essays']
+},
+{
+  title: 'Bone: The Complete Edition',
+  authors: ['Jeff Smith'],
+  rating: 4.42,
+  genres: ['fiction', 'graphic novel', 'fantasy']
+},
+{
+  title: 'American Gods',
+  authors: ['Neil Gaiman'],
+  rating: 4.11,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'A Gentleman in Moscow',
+  authors: ['Amor Towles'],
+  rating: 4.36,
+  genres: ['fiction', 'historical fiction']
+},
+{
+  title: 'The Name of the Wind',
+  authors: ['Patrick Rothfuss'],
+  rating: 4.54,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'The Overstory',
+  authors: ['Richard Powers'],
+  rating: 4.19,
+  genres: ['fiction', 'short stories']
+},
+{
+  title: 'The Way of Kings',
+  authors: ['Brandon Sanderson'],
+  rating: 4.65,
+  genres: ['fantasy', 'epic']
+},
+{
+  title: 'Lord of the flies',
+  authors: ['William Golding'],
+  rating: 3.67,
+  genres: ['fiction']
+}
+]
+
+
+//03 is all the books has rating over 3.5?
+
+let isGoodBook = uBooks.every(b =>(
+  b.rating >= 3.5
+))
+
+console.log(isGoodBook);
+
+//04 does any books has 2 authors?
+
+let checkAuthors = uBooks.some(n =>(
+  n.authors.length === 2
+))
+
+console.log(`authors: ${checkAuthors}`);
 
 
 
 
-// // colts code
-
-
-// const words = ["dog", 'dig', 'log', 'bag', 'wag'];
-
-// //Is every word 3 characters long?
-// const all3Letters = words.every(word => word.length === 3);
-
-// // Do all words end in 'g'?
-// const allEndInG = words.every(word => {
-//   const last = word.length - 1;
-//   return word[last] === 'g'
-// });
-
-// //Does at least 1 book start with 'd'?
-// const someStartWithD = words.some(word => word[0] === 'd');
-
-// // Do all words start with 'd'?
-// const allStartWithD = words.every(word => word[0] === 'd');
-
-// const books = [{
-//     title: 'Good Omens',
-//     authors: ['Terry Pratchett', 'Neil Gaiman'],
-//     rating: 4.25,
-//     genres: ['fiction', 'fantasy']
-//   },
-//   {
-//     title: 'Changing My Mind',
-//     authors: ['Zadie Smith'],
-//     rating: 3.83,
-//     genres: ['nonfiction', 'essays']
-//   },
-//   {
-//     title: 'Bone: The Complete Edition',
-//     authors: ['Jeff Smith'],
-//     rating: 4.42,
-//     genres: ['fiction', 'graphic novel', 'fantasy']
-//   },
-//   {
-//     title: 'American Gods',
-//     authors: ['Neil Gaiman'],
-//     rating: 4.11,
-//     genres: ['fiction', 'fantasy']
-//   },
-//   {
-//     title: 'A Gentleman in Moscow',
-//     authors: ['Amor Towles'],
-//     rating: 4.36,
-//     genres: ['fiction', 'historical fiction']
-//   },
-//   {
-//     title: 'The Name of the Wind',
-//     authors: ['Patrick Rothfuss'],
-//     rating: 4.54,
-//     genres: ['fiction', 'fantasy']
-//   },
-//   {
-//     title: 'The Overstory',
-//     authors: ['Richard Powers'],
-//     rating: 4.19,
-//     genres: ['fiction', 'short stories']
-//   },
-//   {
-//     title: 'The Way of Kings',
-//     authors: ['Brandon Sanderson'],
-//     rating: 4.65,
-//     genres: ['fantasy', 'epic']
-//   },
-//   {
-//     title: 'Lord of the flies',
-//     authors: ['William Golding'],
-//     rating: 3.67,
-//     genres: ['fiction']
-//   }
-// ]
-// //Are all books rated 3.5 or higher?
-// const allGoodBooks = books.every(book => book.rating > 3.5);
-
-// //Do any books have 2 authors?
-// const any2Authors = books.some(book => book.authors.length === 2)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.clear()
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
 /*##############################################################*/
-const mPrice = [400.50, 3000, 99.99, 35.99, 12.00, 9500];
-// REMEMBER THAT SORT() MUTATES THE ORIGINAL ARRAY!
-// I'm using slice() to create a new copy, otherwise we would be sorting the same array 3 times:
+console.log(`
+======= 9. Revisiting Sort! 10:47 =======
 
-// Default string sort :( 
-const badSort = mPrice.slice().sort();
+`);
 
-// Ascending Sort:
-const ascSort = mPrice.slice().sort((a, b) => a - b);
+let randomNums = [12, 2333, 450, 6000, 13.023, 13.014, 9999.00, 99.9990, 14]
 
-// Descending Sort:
-const descSort = mPrice.slice().sort((a, b) => b - a);
+console.log(randomNums);
+let acndNums = randomNums.slice().sort((a,b) => a -b)
+let dcenNums = randomNums.slice().sort((a,b) => b -a)
+console.log(acndNums);
+console.log(dcenNums);
+
+/*
+  let sortAccending = randomNums.map(e =>{
+  return e
+  })
+  sortAccending.sort((a,b) => a -b)
+  console.log(sortAccending);
+
+*/
+
+
+const kBooks = [{
+  title: 'Good Omens',
+  authors: ['Terry Pratchett', 'Neil Gaiman'],
+  rating: 4.25,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'Changing My Mind',
+  authors: ['Zadie Smith'],
+  rating: 3.83,
+  genres: ['nonfiction', 'essays']
+},
+{
+  title: 'Bone: The Complete Edition',
+  authors: ['Jeff Smith'],
+  rating: 4.42,
+  genres: ['fiction', 'graphic novel', 'fantasy']
+},
+{
+  title: 'American Gods',
+  authors: ['Neil Gaiman'],
+  rating: 4.11,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'A Gentleman in Moscow',
+  authors: ['Amor Towles'],
+  rating: 4.36,
+  genres: ['fiction', 'historical fiction']
+},
+{
+  title: 'The Name of the Wind',
+  authors: ['Patrick Rothfuss'],
+  rating: 4.54,
+  genres: ['fiction', 'fantasy']
+},
+{
+  title: 'The Overstory',
+  authors: ['Richard Powers'],
+  rating: 4.19,
+  genres: ['fiction', 'short stories']
+},
+{
+  title: 'The Way of Kings',
+  authors: ['Brandon Sanderson'],
+  rating: 4.65,
+  genres: ['fantasy', 'epic']
+},
+{
+  title: 'Lord of the flies',
+  authors: ['William Golding'],
+  rating: 3.67,
+  genres: ['fiction']
+}
+]
+
+
+let sortedRatingAccending = kBooks.sort((a, b) => a.rating - b.rating)
+let sortedRatingDecending = kBooks.sort((a, b) => b.rating - a.rating)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*##############################################################*/
 /* ======= 10. Reduce Intro 08:49 ======= */
 /*##############################################################*/
-const jNums = [3, 4, 5, 6, 7];
-// To multiply all values in jNums:
-const product = jNums.reduce((total, currentVal) => {
-  return total * currentVal;
-});
 
-// total    currentVal    returnVal
-// 3             4           12
-// 12            5           60
-// 60            6           360
-// 360           7           2520
-
-//Final Return Value: 2520
 /*##############################################################*/
 /* ======= 11. Reduce Pt. 2 08:55 ======= */
 /*##############################################################*/
-const jGrades = [87, 64, 96, 92, 88, 99, 73, 70, 64];
 
-// One approach to find max using reduce:
-// const maxGrade = jGrades.reduce((max, currVal) => {
-//   if (currVal > max) return currVal;
-//   return max;
-// });
-
-// A shorter version using Math.max:
-const maxGrade = jGrades.reduce((max, currVal) => {
-  return Math.max(max, currVal)
-});
-// Finding the min value using Math.min: 
-const minGrade = jGrades.reduce((min, currVal) => (
-  //using implicit return for variety's sake
-  Math.min(min, currVal)
-));
-
-// max     currVal    return
-// 87        64         87
-// 87        96         96
-// 96        92         96
-/// etc.
-
-// We can specify an initial value as the 2nd argument to reduce:
-// arr.reduce(reducerFunction, initialValue)
-const total = [10, 20, 30, 40, 50].reduce((sum, currVal) => {
-  return sum + currVal;
-}, 1000) //sum starts at 1000, then each element is added to it
 /*##############################################################*/
 /* ======= 12. Even More Reduce! 13:10 ======= */
 /*##############################################################*/
 
-const zVotes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
-
-// To tally the zVotes:
-// const results = zVotes.reduce((tally, val) => {
-//   if (tally[val]) {
-//     tally[val]++
-//   } else {
-//     tally[val] = 1;
-//   }
-//   return tally;
-// }, {})
-
-// The shorter version:
-const results = zVotes.reduce((tally, val) => {
-  tally[val] = (tally[val] || 0) + 1;
-  return tally;
-}, {});
-
-const zBooks = [{
-    title: 'Good Omens',
-    authors: ['Terry Pratchett', 'Neil Gaiman'],
-    rating: 4.25,
-    genres: ['fiction', 'fantasy']
-  },
-  {
-    title: 'Changing My Mind',
-    authors: ['Zadie Smith'],
-    rating: 3.83,
-    genres: ['nonfiction', 'essays']
-  },
-  {
-    title: 'Bone: The Complete Edition',
-    authors: ['Jeff Smith'],
-    rating: 4.42,
-    genres: ['fiction', 'graphic novel', 'fantasy']
-  },
-  {
-    title: 'American Gods',
-    authors: ['Neil Gaiman'],
-    rating: 4.11,
-    genres: ['fiction', 'fantasy']
-  },
-  {
-    title: 'A Gentleman in Moscow',
-    authors: ['Amor Towles'],
-    rating: 4.36,
-    genres: ['fiction', 'historical fiction']
-  },
-  {
-    title: 'The Name of the Wind',
-    authors: ['Patrick Rothfuss'],
-    rating: 4.54,
-    genres: ['fiction', 'fantasy']
-  },
-  {
-    title: 'The Overstory',
-    authors: ['Richard Powers'],
-    rating: 4.19,
-    genres: ['fiction', 'short stories']
-  },
-  {
-    title: 'A Truly Horrible Book',
-    authors: ['Xavier Time'],
-    rating: 2.18,
-    genres: ['fiction', 'garbage']
-  },
-  {
-    title: 'The Way of Kings',
-    authors: ['Brandon Sanderson'],
-    rating: 4.65,
-    genres: ['fantasy', 'epic']
-  },
-  {
-    title: 'Lord of the flies',
-    authors: ['William Golding'],
-    rating: 3.67,
-    genres: ['fiction']
-  }
-]
-// To group zBooks by rating: 
-const groupedByRatings = zBooks.reduce((groupedzBooks, book) => {
-  const key = Math.floor(book.rating);
-  if (!groupedzBooks[key]) groupedzBooks[key] = [];
-  groupedzBooks[key].push(book)
-  return groupedzBooks;
-}, {})
