@@ -854,6 +854,11 @@ let maxNUM = tNum.reduce((max, eachNum) =>{
 
 console.log(maxNUM);
 
+
+let anoMax = tNum.reduce((max, eachNum) =>(
+  Math.max(max, eachNum)
+))
+
 /*##############################################################*/
 /* ======= 12. Even More Reduce! 13:10 ======= */
 /*##############################################################*/
