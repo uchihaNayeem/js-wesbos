@@ -708,7 +708,7 @@ console.log(`authors: ${checkAuthors}`);
 
 
 
-console.clear()
+
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
 /*##############################################################*/
@@ -717,6 +717,31 @@ console.log(`
 
 `);
 
+/*
+  [
+    sort():
+        1. sort takes a callback with two parameters.
+        2. We can use sort without callback. this will sort by using
+           using string [a, b, cat, dog... etc].
+        3.Syntax:
+              * arr.sort( (a,b) => a -b )
+              * When: 
+                  i. a - b = -1, sort a before b.
+                 ii. a - b = 0, Leave a and b unchanged in their possition.
+                iii. a -b = 1 , sort b before a
+        4. NOTE: arr.sort() changes or mutate the ORIGINAL array!!!
+        5. If you dont want change the original array, Then create a copy
+           of that arr and use sort()
+
+        [1, 3, 5, 4, 6]
+        1-3 = -2 [1,3]
+        3-5 = -2 [3,5]
+        5-4 = 1 [4, 5]
+        4-6 = -2 [ 4, 6]       
+  ]
+*/
+
+//01
 let randomNums = [12, 2333, 450, 6000, 13.023, 13.014, 9999.00, 99.9990, 14]
 
 console.log(randomNums);
@@ -734,7 +759,7 @@ console.log(dcenNums);
 
 */
 
-
+//02 
 const kBooks = [{
   title: 'Good Omens',
   authors: ['Terry Pratchett', 'Neil Gaiman'],
@@ -795,30 +820,39 @@ const kBooks = [{
 let sortedRatingAccending = kBooks.sort((a, b) => a.rating - b.rating)
 let sortedRatingDecending = kBooks.sort((a, b) => b.rating - a.rating)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.clear()
 /*##############################################################*/
 /* ======= 10. Reduce Intro 08:49 ======= */
 /*##############################################################*/
+console.log(`
+======= 10. Reduce Intro 08:49 =======
+
+`);
+
+
+let rNum = [12, 23, 34, 56, 68, 34, 28]
+
+let rMultiply = rNum.reduce((accumulator, currentVal) =>{
+  return accumulator * currentVal
+})
+
+console.log(rMultiply);
+console.log(12* 23* 34* 56* 68* 34* 28);
 
 /*##############################################################*/
 /* ======= 11. Reduce Pt. 2 08:55 ======= */
 /*##############################################################*/
+
+let tNum = [12, 65, 23, 68, 23, 97, 23, 44, 87 ,0983]
+
+// find the max
+
+let maxNUM = tNum.reduce((max, eachNum) =>{
+  if(eachNum > max) return eachNum
+  return max
+})
+
+console.log(maxNUM);
 
 /*##############################################################*/
 /* ======= 12. Even More Reduce! 13:10 ======= */
