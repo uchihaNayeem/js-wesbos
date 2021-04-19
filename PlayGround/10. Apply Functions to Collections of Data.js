@@ -426,9 +426,6 @@ const neilBook = sBooks.find(b => ( // () 🠔 means explicit return
 console.log(goodBook, neilBook);
 
 
-
-
-
 /*##############################################################*/
 /* ======= 7. Filter 10:05 ======= */
 /*##############################################################*/
@@ -447,9 +444,7 @@ console.log(`
 */
 
 
-
 let oNums = [12, 13, 15, 63, 74, 23, 65, 75, 34, 67, 85,23]
-
 
 // 01 give a new array of odd & even number
 let oOdd = oNums.filter( n => n % 2 === 1) 
@@ -573,9 +568,6 @@ function searchQuerying(str) {
  return search = oBooks.filter(b =>(
     b.title.toLowerCase().includes(mystr)
   ))
-
- 
-
 }
 
 
@@ -704,11 +696,6 @@ console.log(`authors: ${checkAuthors}`);
 
 
 
-
-
-
-
-
 /*##############################################################*/
 /* ======= 9. Revisiting Sort! 10:47 ======= */
 /*##############################################################*/
@@ -829,6 +816,34 @@ console.log(`
 
 `);
 
+/*
+  [
+    arr.reduce():
+          1. reduce() takes a callback
+          2. Callback has two parameter.
+          3. Syntax:
+                arr.reduce((accumulator, currentValue) =>{
+                  return accumulator + currentValue
+                })
+          4. example & explanation:
+    [EXAMPLE]
+   - [12, 23, 34, 56, 68, 34, 28].reduce((accumulator, currentValue) =>{
+                  return accumulator + currentValue
+                })
+    [EXPLANATION]
+   - accumulator/total        currentValue           result
+            12          +           23       -->        35
+            35          +           34       -->        69
+            69          +           56       -->        125
+            125         +           68       -->        193
+            193         +           34       -->        227
+            227         +           28       -->        255
+                   this 255 is the Accumelated RESULT
+          5. accumulator/total is some sort of MEMORY which keeps
+             last result
+          6. 
+  ]
+*/
 
 let rNum = [12, 23, 34, 56, 68, 34, 28]
 
@@ -859,7 +874,37 @@ let anoMax = tNum.reduce((max, eachNum) =>(
   Math.max(max, eachNum)
 ))
 
+
 /*##############################################################*/
 /* ======= 12. Even More Reduce! 13:10 ======= */
 /*##############################################################*/
+
+/*
+  [
+          1. Syntax:
+                arr.reduce((accumulator, currentValue) =>{
+                  return accumulator + currentValue
+                }, 0)
+  ]
+*/
+
+
+
+
+const votes = ['y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n', 'y', 'y'];
+
+// To tally the votes:
+const results = votes.reduce((tally, val) => {
+  
+  if (tally[val]) { // {['y']} here tally is {} and val is 'y'
+    tally[val]++
+  } else {
+    tally[val] = 1;
+  }
+  return tally;
+}, {})
+
+console.log(results);
+
+
 
