@@ -238,7 +238,29 @@ others; //["Feyisa Lelisa", "Galen Rupp", "Ghirmay Ghebreslassie", "Alphonce Sim
 /*############################################*/
 /*  09. Destructuring Objects 04:16  ====== */  
 /*##############################################*/
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+  title: "Elder of the Order of the Golden Heart of Kenya"
+}
 
+// const {
+//   first,
+//   last,
+//   time
+// } = runner;
+
+const {
+  country: nation,
+  title: honorific
+} = runner;
+
+const {
+  first,
+  last,
+  ...other
+} = runner;
 /*############################################*/
 /*  10. Nested Destructuring 02:54  ====== */  
 /*##############################################*/
