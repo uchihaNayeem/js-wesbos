@@ -264,7 +264,30 @@ const {
 /*############################################*/
 /*  10. Nested Destructuring 02:54  ====== */  
 /*##############################################*/
-
+const resultsOne = [{
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+},
+{
+  first: 'Feyisa',
+  last: 'Lilesa',
+  country: 'Ethiopia'
+},
+{
+  first: 'Galen',
+  last: 'Rupp',
+  country: 'United States'
+}
+]
+// NESTED DESTRUCTURING
+const [{
+first: goldWinner
+}, {
+country
+}] = resultsOne;
+goldWinner; //"Eliud"
+country; //"Ethiopia"
 /*############################################*/
 /*  11. Destructuring Parameters 05:04  ====== */  
 /*##############################################*/
