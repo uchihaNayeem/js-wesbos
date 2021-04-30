@@ -29,56 +29,81 @@ let greet = (person, greeting = 'Hi', puntuation = '!')=>{
 // NOTE: we can set the default parameters ONLY to the last parameters.
 
 /*############################################*/
-/*  03. Spread for Function Calls 06:53  ====== */  
+/*  03. ======= Spread for Function Calls 06:53  ====== */  
 /*##############################################*/
-function giveMeFour(a, b, c, d) {
-  console.log('a', a)
-  console.log('b', b)
-  console.log('c', c)
-  console.log('d', d)
+console.log(`object`);
+/*
+  [
+    1. spread syntax, [ ... ]
+    2. if we use spread in a function it 'expands' all the element from
+       a 'string' or 'array'
+    3. each element act like an 'individual'
+  ]
+*/
+
+let myStr = 'GOAT';
+let colors = ['blue', 'green', 'yellow', 'pink'];
+
+function giveMeFour (a, b, c, d){
+  console.log('a' , a);
+  console.log('b' , b);
+  console.log('c' , c);
+  console.log('d' , d);
+
 }
 
-const colors = ['red', 'orange', 'yellow', 'green']
 
-// Without spread:
-giveMeFour(colors);
-// a ["red", "orange", "yellow", "green"]
-// b undefined
-// c undefined
-// d undefined
+console.log(giveMeFour('aa', 'b', 'c', 'd'));
+console.log(giveMeFour(...colors));
+console.log(giveMeFour(...myStr));
 
-// WITH SPREAD!!!
-// Values are passed as separate args:
-giveMeFour(...colors);
-// a 'red'
-// b 'orange'
-// c 'yellow'
-// d 'green'
+//practice
+function olodama(a, b, c, d){
+  console.log(a);
+  console.log(b);
+  console.log(c);
+  console.log(d);
+  return 'hey hey' + a + b + c + d
+}
 
-//We can also spread strings!
-giveMeFour(...'GOAT');
-// a G
-// b O
-// c A
-// d T
+const bolodama = [' olodama', ' rasengan', ' mangekyo', ' sharingan']
+
+
 /*############################################*/
-/*  04. Spread in Array Literals 08:08  ====== */  
+/*  04. ======= Spread in Array Literals 08:08  ====== */  
 /*##############################################*/
-const cephalopods = ['dumbo octopus', 'humboldt squid', 'flamboyant cuttlefish'];
-
-const gastropods = ['giant african snail', 'banana slug', 'variable neon slug'];
-
-const cnidaria = ['fire coral', 'moon jelly'];
+console.log(`04. ======= Spread in Array Literals 08:08  ====== `);
 
 
-const mollusca = [...cephalopods, ...gastropods]
-//["dumbo octopus", "humboldt squid", "flamboyant cuttlefish", "giant african snail", "banana slug", "variable neon slug"]
+/*
+  [ [i get scared when i hear these term XD ]
+    1.in array literals it takes an array and spreads 
+      its element in a new array.
+    
+  ]
+*/
 
-const inverts = [...cnidaria, ...gastropods, ...cephalopods]
-//["fire coral", "moon jelly", "giant african snail", "banana slug", "variable neon slug", "dumbo octopus", "humboldt squid", "flamboyant cuttlefish"]
 
-const cephCopy = [...cephalopods];
-//["dumbo octopus", "humboldt squid", "flamboyant cuttlefish"]
+const engDepts = ['cse', 'eee', 'ete']
+const phyDepts = ['atomic physics', 'astro physics', 'metarial physics']
+
+const allDepts = ['biology',...engDepts, ...phyDepts]
+console.log(allDepts);
+
+
+//creates a whole new arary.
+const copyEngDept = [...engDepts];
+
+//take each element of this string in a new array
+let power = 'olodama'
+
+let powerArray = [...power]
+let powerArrayOne = power.split('')
+
+//copy this in console to see what happens --> [...'olodama', ...'rasendan']
+
+
+
 /*############################################*/
 /*  05. Spread in Object Literals 07:49  ====== */  
 /*##############################################*/
