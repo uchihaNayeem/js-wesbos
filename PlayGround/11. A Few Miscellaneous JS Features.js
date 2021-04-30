@@ -173,7 +173,7 @@ function sumOne() {
 }
 
 // No arguments object inside of arrow functions :(
-const multiply = () => {
+const multiplyOne = () => {
   console.log(arguments);
 }
 /*############################################*/
@@ -238,8 +238,8 @@ others; //["Feyisa Lelisa", "Galen Rupp", "Ghirmay Ghebreslassie", "Alphonce Sim
 /*############################################*/
 /*  09. Destructuring Objects 04:16  ====== */  
 /*##############################################*/
-const runner = {
-  first: "Eliud",
+const runnerOne = {
+  firstOne: "Eliud",
   last: "Kipchoge",
   country: "Kenya",
   title: "Elder of the Order of the Golden Heart of Kenya"
@@ -254,13 +254,13 @@ const runner = {
 const {
   country: nation,
   title: honorific
-} = runner;
+} = runnerOne;
 
 const {
-  first,
+  firstOne,
   last,
   ...other
-} = runner;
+} = runnerOne;
 /*############################################*/
 /*  10. Nested Destructuring 02:54  ====== */  
 /*##############################################*/
@@ -291,5 +291,40 @@ country; //"Ethiopia"
 /*############################################*/
 /*  11. Destructuring Parameters 05:04  ====== */  
 /*##############################################*/
+const runner = {
+  first: "Eliud",
+  last: "Kipchoge",
+  country: "Kenya",
+  title: "Elder of the Order of the Golden Heart of Kenya"
+}
 
+// Rather than destructuring INSIDE the function body
+// function print(person) {
+//   const {
+//     first,
+//     last,
+//     title
+//   } = person;
+//   console.log(`${first} ${last}, ${title}`)
+// }
+
+// We can unpack the values we want right in the parameter list:
+function print({
+  first,
+  last,
+  title
+}) {
+  console.log(`${first} ${last}, ${title}`)
+}
+
+const response = [
+  'HTTP/1.1',
+  '200 OK',
+  'application/json',
+]
+
+// Also works with array parameters:
+function parseResponse([protocol, statusCode, contentType]) {
+  console.log(`Status: ${statusCode}`)
+}
 
