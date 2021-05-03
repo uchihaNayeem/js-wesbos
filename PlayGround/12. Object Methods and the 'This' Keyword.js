@@ -167,6 +167,44 @@ console.log(funcOutput);
 /*#########################################*/
 /* ======= 03. Adding Methods to Objects 05:33 ========= */
 /*#########################################*/
+console.log(`
+======= 03. Adding Methods to Objects 05:33 =========
+
+`);
+
+
+/*
+  [
+    1. if a value of an object is set to 'function', is called method.
+    2. its just like a container some helpful functions.
+  ]
+*/
+
+// way 1 of writting methods
+let math = {
+  numbers: [12, 234, 45, 56, 78, 9832, 76],
+  add: function (x, y) {
+    return x + y
+  },
+  subtract: function (x, y) {
+    return x - y
+  },
+  divide: function (x, y) {
+    return x / y
+  },
+  multiply: function (x, y) {
+    return x * y
+  },
+  sumOfArr: function (arr) {
+    let total = arr.reduce((acc, cur) => acc + cur)
+    return total
+  }
+
+}
+
+
+console.log(math.sumOfArr(math.numbers));
+console.log(math.add(12, 23));
 
 /*#########################################*/
 /* ======= 04. Method Shorthand Syntax 02:45 ========= */
