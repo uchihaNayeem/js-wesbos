@@ -1,4 +1,3 @@
-console.log(`12. Object Methods and the 'This' Keyword`);
 
 // total 1h 24m
 
@@ -113,6 +112,57 @@ console.log(getCardColt());
 /*#########################################*/
 /* ======= 02. Computed Properties 07:02 ========= */
 /*#########################################*/
+console.log(`
+======= 02. Computed Properties 07:02 =========
+
+`);
+
+/*
+  [ * Computed Properties,
+
+    1. we can set the 'value' of variable as a 'key' of an object.
+    2. and then set value to the `key`.
+
+  ]
+*/
+
+let movieRole = 'Director';
+let movieRole2 = 'Camera man';
+let person = 'james Cameroon';
+let person2 = 'Silvaster Stalon';
+
+// computed properties
+
+//01  way one
+let newObj = {};
+
+newObj[movieRole] = person;
+console.log(newObj);
+
+//02 way two
+
+let newObj2 = {
+  [movieRole]: person,
+  [movieRole2]: person2,
+}
+console.log(newObj2);
+
+//03 make a funtion that takes an object, and returns a object with adding
+// a new property to
+
+function createObj(object, key, value) {
+  return {
+    ...object,
+    [key]: value
+
+  }
+}
+console.log(createObj(newObj2, 'makeup-artist', 'sasuke uchiha'));
+
+//grab the return of this function
+let funcOutput = createObj(newObj2, 'makeup-artist', 'sasuke uchiha')
+console.log(funcOutput);
+
 
 /*#########################################*/
 /* ======= 03. Adding Methods to Objects 05:33 ========= */
