@@ -209,6 +209,38 @@ console.log(math.add(12, 23));
 /*#########################################*/
 /* ======= 04. Method Shorthand Syntax 02:45 ========= */
 /*#########################################*/
+console.log(`
+======= 04. Method Shorthand Syntax 02:45 =========
+
+`);
+
+// way 2 of writting methods. 
+//[function keyword and ' : ' removed in shorthand]
+
+
+let mathShort = {
+  numbers: [12, 234, 45, 56, 78, 9832, 76],
+  add(x, y) {
+    return x + y
+  },
+  subtract(x, y) {
+    return x - y
+  },
+  divide(x, y) {
+    return x / y
+  },
+  multiply(x, y) {
+    return x * y
+  },
+  sumOfArr(arr) {
+    let total = arr.reduce((acc, cur) => acc + cur)
+    return total
+  }
+
+}
+
+console.log(math.sumOfArr(math.numbers));
+console.log(math.add(12, 23));
 
 /*#########################################*/
 /* ======= 05. Intro to Keyword THIS 06:17 ========= */
