@@ -74,6 +74,42 @@ function getCards(arr) {
 
 console.log(getCards(values));
 
+//colt solution
+
+function pickColt(arr) {
+  //return random element from arr
+  const idx = Math.floor(Math.random() * arr.length);
+  return arr[idx];
+}
+
+function getCardColt() {
+  const values = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    'J',
+    'Q',
+    'K',
+    'A'
+  ];
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  const value = pickColt(values);
+  const suit = pickColt(suits)
+  return {
+    value,
+    suit
+  };
+}
+
+console.log(getCardColt());
+
 /*#########################################*/
 /* ======= 02. Computed Properties 07:02 ========= */
 /*#########################################*/
