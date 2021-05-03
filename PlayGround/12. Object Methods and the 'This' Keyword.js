@@ -5,6 +5,74 @@ console.log(`12. Object Methods and the 'This' Keyword`);
 /*#########################################*/
 /* ======= 01. Shorthand Object Properties 04:25 ========= */
 /*#########################################*/
+console.log(`
+======= 01. Shorthand Object Properties 04:25 =========
+
+`);
+/*
+  [
+    1. here the main concept in we can write objects in a short way.
+    2. in func return,
+                {
+                  max, min, sum, avg
+                }
+    3. value auto assigned :D 
+  ]
+*/
+
+
+function theCalculate(arr) {
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  let sum = arr.reduce((acc, cur) => acc + cur);
+  let avg = sum / arr.length;
+  return {
+    max, min, sum, avg // value auto assigned. Shorthand way to write object.
+  }
+}
+
+let randomNums = [12.32, 122, 4325, 23, 65, 98, 7, 21, 24, 63, 1, 5000]
+let stat = theCalculate(randomNums)
+console.log(stat);
+
+
+// my Solution
+const values = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  'J',
+  'Q',
+  'K',
+  'A'
+];
+
+const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+
+function getCards(arr) {
+  let myCards = '';
+  let mySuits = '';
+  for (let i = 0; i < arr.length; i++) {
+    let random = Math.round(Math.random() * (arr.length - 1));
+    myCards = arr[random]
+  }
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  for (let i = 0; i < suits.length; i++) {
+    let random = Math.round(Math.random() * (suits.length - 1));
+    mySuits = suits[random];
+  }
+  return { myCards, mySuits }
+
+}
+
+console.log(getCards(values));
 
 /*#########################################*/
 /* ======= 02. Computed Properties 07:02 ========= */
