@@ -245,7 +245,17 @@ console.log(math.add(12, 23));
 /*#########################################*/
 /* ======= 05. Intro to Keyword THIS 06:17 ========= */
 /*#########################################*/
+console.log(`
+======= 05. Intro to Keyword THIS 06:17 =========
 
+`);
+
+//in a function 'this' refers to window.
+function greetione() {
+  console.log('hello');
+  console.log(this);
+  console.log(this.console.log('hi'));
+}
 /*#########################################*/
 /* ======= 06. Using THIS in Methods 07:15 ========= */
 /*#########################################*/
