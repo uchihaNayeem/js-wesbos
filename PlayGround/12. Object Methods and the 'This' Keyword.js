@@ -285,6 +285,21 @@ let shippuden = {
 
 shippuden.last = 'uzumakiAkh'
 
+
+//same but not using 'this'
+//I've a question: why not use the object name?? instead of using this!!
+let shippudenOne = {
+  first: 'narutoyo',
+  last: 'uzumakiAkh',
+  nickName: 'hokageSama',
+  fullName() {
+    let { first, last, nickName } = shippudenOne
+    return `${last} ${first} ${nickName}`
+  },
+  bio() {
+    console.log(`${shippudenOne.fullName()} is a : 'olodama rasengan'`);
+  }
+}
 /*#########################################*/
 /* ======= 07. THIS: Invocation Context 07:43 ========= */
 /*#########################################*/
