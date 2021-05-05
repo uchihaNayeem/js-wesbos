@@ -427,7 +427,32 @@ let annoyomatic = {
 
 // annoyomatic.start();
 
+//practice 
 
+let annoyer = {
+  phrases: ['oh sooot', 'hoho ho hou', 'dang dang!', 'daeiyang!', 'basically'],
+  pickOne() {
+    let { phrases } = this;
+    let idx = Math.floor(Math.random() * phrases.length)
+    return phrases[idx]
+  },
+  start() {
+    let that = this
+    setInterval(function () {
+      console.log(this);
+      console.log(that);
+      console.log(that.pickOne());
+      // console.log(`interval Hello`);
+    }, 1000)
+  },
+  // stop() {
+  //   clearInterval(this.timerId);
+  //   console.log("PHEW THANK HEAVENS THAT IS OVER!")
+  // }
+}
+
+
+// annoyer.start()
 
 /*#########################################*/
 /* ======= 09. Putting It All Together: Deck Of Cards 25:33 ========= */
