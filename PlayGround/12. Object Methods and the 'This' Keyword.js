@@ -388,6 +388,46 @@ let copyShippuden = shippudenTwo.bio
 /*#########################################*/
 /* ======= 08. Annoyomatic Demo 14:03 ========= */
 /*#########################################*/
+console.log(`
+======= 08. Annoyomatic Demo 14:03 =========
+
+`);
+/*
+  [ 
+    * 'annoyomatic'- object code description
+      1. pickOne() method gives us a random value from 'phrases' array.
+      2. start() method has a global method 'setInterval'. In 'setInterval'
+         we used arrow function to get the access of 'pickOne' func.
+         Because arrow function doesn't have its own 'this'.
+      3. 'setInterval' runs until we stop it. to stop it we'll use
+         'clearInterval'. 
+      4. 'setInterval' returns a ID which we've used in the 'stop()' .
+      5. to get the 'returned' id we've used 'this.myID'
+  ]
+*/
+
+
+let annoyomatic = {
+  phrases: ['olodama', 'rasengan', 'mangyekyo', 'sharingan'],
+  pickOne() {
+    let { phrases } = this
+    let idx = Math.floor(Math.random() * phrases.length)
+    return phrases[idx]
+  },
+  start() {
+    this.myID = setInterval(() => {
+      console.log(this.pickOne());
+    }, 1000)
+  },
+  stop() {
+    clearInterval(this.myID);
+    console.log(`setInterval() STOPPED`);
+  }
+}
+
+// annoyomatic.start();
+
+
 
 /*#########################################*/
 /* ======= 09. Putting It All Together: Deck Of Cards 25:33 ========= */
