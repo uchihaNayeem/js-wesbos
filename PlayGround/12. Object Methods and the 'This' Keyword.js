@@ -303,6 +303,58 @@ let shippudenOne = {
 /*#########################################*/
 /* ======= 07. THIS: Invocation Context 07:43 ========= */
 /*#########################################*/
+console.log(`
+======= 07. THIS: Invocation Context 07:43 ========= 
+
+`);
+
+/* 
+  [
+    1. Using 'this' in an object gives us the access of all the properties
+       in that object.
+    2. 'this' is useful to create method. [Method is a func created inside
+       of an object]
+    3. But 'this' behavior depends on how you're calling it.
+    4. if we access 'object.method()' it works fine and points object.
+    5. if we create a reference to the object, it brakes and points
+       the window object. 
+
+    6. arrow functions always points to the window. so its better
+       to use regular func to create method.
+
+  ]
+*/
+
+
+
+
+let personione = {
+  name: 'cristopher',
+  title: 'director',
+  nickName: 'nOlan',
+  age: 30,
+  greet() {
+    let { name, title, age } = this
+    return `${name}'s age is ${age}. he's a ${title} `
+  },
+  bio() {
+    console.log(this);
+    console.log(`${this.greet()}. his nick name is ${this.nickName}`);
+  },
+  laugh: () => {
+    console.log(this);
+    console.log(`${this.nickName} says hahaah`);
+  }
+}
+
+//it works fine when i call it with an object
+personione.bio()
+
+//if we create a reference, 'this' keyword points window and gives error
+let myBio = personione.bio
+// console.log(myBio()); // gives error. and points window
+
+
 
 /*#########################################*/
 /* ======= 08. Annoyomatic Demo 14:03 ========= */
