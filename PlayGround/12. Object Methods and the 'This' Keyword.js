@@ -354,6 +354,35 @@ personione.bio()
 let myBio = personione.bio
 // console.log(myBio()); // gives error. and points window
 
+// same thing practice with different example
+
+let shippudenTwo = {
+  first: 'narutoyo',
+  last: 'mange',
+  nickName: 'gaki',
+  fullName() {
+    let { first, last, nickName } = this
+    return `${last} ${first} ${nickName}`
+  },
+  bio() {
+    console.log(this);
+    let fullName = this.fullName()
+    console.log(`${fullName} is a : 'olodama rasengan'`);
+  }
+}
+
+
+
+
+let copyShippuden = shippudenTwo.bio
+/*
+  [
+   [ let copyShippuden = shippudenTwo.bio ]
+    NOTE: bio er por () deya jabena, jeta ami vule kortesilam. 
+    function reference create er time a () deya mane holo 
+    function tai cal kore dilam!!! 
+  ]
+*/
 
 
 /*#########################################*/
