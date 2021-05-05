@@ -259,6 +259,31 @@ function greetione() {
 /*#########################################*/
 /* ======= 06. Using THIS in Methods 07:15 ========= */
 /*#########################################*/
+console.log(`
+======= 06. Using THIS in Methods 07:15 =========
+
+`);
+
+/*
+  [
+    1. in an object 'this' refers the current object
+  ]
+*/
+
+let shippuden = {
+  first: 'narutoyo',
+  last: 'mange',
+  nickName: 'hokageSama',
+  fullName() {
+    let { first, last, nickName } = this
+    return `${last} ${first} ${nickName}`
+  },
+  bio() {
+    console.log(`${this.fullName()} is a : 'olodama rasengan'`);
+  }
+}
+
+shippuden.last = 'uzumakiAkh'
 
 /*#########################################*/
 /* ======= 07. THIS: Invocation Context 07:43 ========= */
