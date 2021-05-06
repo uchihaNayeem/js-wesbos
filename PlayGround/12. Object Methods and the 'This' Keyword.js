@@ -1,3 +1,7 @@
+//learn french 
+// https://www.youtube.com/watch?v=eq--V9P4rmM
+
+
 
 // total 1h 24m
 
@@ -109,6 +113,7 @@ function getCardColt() {
 
 console.log(getCardColt());
 
+
 /*#########################################*/
 /* ======= 02. Computed Properties 07:02 ========= */
 /*#########################################*/
@@ -163,7 +168,6 @@ console.log(createObj(newObj2, 'makeup-artist', 'sasuke uchiha'));
 let funcOutput = createObj(newObj2, 'makeup-artist', 'sasuke uchiha')
 console.log(funcOutput);
 
-
 /*#########################################*/
 /* ======= 03. Adding Methods to Objects 05:33 ========= */
 /*#########################################*/
@@ -206,6 +210,7 @@ let math = {
 console.log(math.sumOfArr(math.numbers));
 console.log(math.add(12, 23));
 
+
 /*#########################################*/
 /* ======= 04. Method Shorthand Syntax 02:45 ========= */
 /*#########################################*/
@@ -242,6 +247,7 @@ let mathShort = {
 console.log(math.sumOfArr(math.numbers));
 console.log(math.add(12, 23));
 
+
 /*#########################################*/
 /* ======= 05. Intro to Keyword THIS 06:17 ========= */
 /*#########################################*/
@@ -256,6 +262,9 @@ function greetione() {
   console.log(this);
   console.log(this.console.log('hi'));
 }
+
+
+
 /*#########################################*/
 /* ======= 06. Using THIS in Methods 07:15 ========= */
 /*#########################################*/
@@ -300,6 +309,8 @@ let shippudenOne = {
     console.log(`${shippudenOne.fullName()} is a : 'olodama rasengan'`);
   }
 }
+
+
 /*#########################################*/
 /* ======= 07. THIS: Invocation Context 07:43 ========= */
 /*#########################################*/
@@ -353,6 +364,7 @@ personione.bio()
 //if we create a reference, 'this' keyword points window and gives error
 let myBio = personione.bio
 // console.log(myBio()); // gives error. and points window
+
 
 // same thing practice with different example
 
@@ -427,6 +439,7 @@ let annoyomatic = {
 
 // annoyomatic.start();
 
+
 //practice 
 
 let annoyer = {
@@ -454,11 +467,307 @@ let annoyer = {
 
 // annoyer.start()
 
+
+
 /*#########################################*/
 /* ======= 09. Putting It All Together: Deck Of Cards 25:33 ========= */
 /*#########################################*/
+console.log(`
+======= 09. Putting It All Together: Deck Of Cards 25:33 =========
+
+`);
+
+
+//01 OLD practice
+const xCards = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+const xSuits = ['clubs', 'spades', 'hearts', 'diamonds'];
+
+function xPickOne(arr) {
+  let idx = Math.floor(Math.random() * arr.length)
+  return arr[idx]
+}
+
+let xMakeCards = () => {
+  let card = xPickOne(xCards);
+  let suit = xPickOne(xSuits);
+  return {
+    card, suit
+  }
+}
+
+
+
+// make a function and create a deck card
+function myCardDeck() {
+  //01
+  let deck = [];
+  const values = '2,3,4,5,6,7,8,9,10,J,Q,K,A';
+  const suits = ['clubs', 'spades', 'hearts', 'diamonds'];
+  //02
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      deck.push({ value, suit });
+    }
+  }
+  //03
+  // console.log(deck);
+  return deck
+}
+// take one card 
+function drawCard(deck) {
+  return deck.pop()
+}
+//capture the return of 'myCardDeck()'
+let createDeck = myCardDeck();
+let card1 = drawCard(createDeck)
+
+
+//the taash object
+let taash = {
+  deck: [],
+  drawnCards: [],
+  values: '2,3,4,5,6,7,8,9,10,J,Q,K,A',
+  suits: ['clubs', 'spades', 'hearts', 'diamonds'],
+  initializeDeck() {
+    let { deck, values, suits } = this
+    // console.log(deck,values,suits);
+    for (let value of values.split(',')) {
+      for (let suit of suits) {
+        deck.push({ value, suit })
+      }
+    }
+  },
+  draw() {
+    let cards = this.deck.pop()
+    return this.drawnCards.push(cards)
+  },
+  multiDraw(numCards) {
+
+  }
+
+}
+
+
+let myDeck = taash.initializeDeck()
+taash.draw()
+
+
+console.log(taash.deck);
+
+
+let drawn = taash.drawnCards
+console.log(drawn);
+
+
+
+//-----------------------------------------
+//Colt solution
+const coltDeck = {
+  deck: [],
+  drawnCards: [],
+  suits: ['hearts', 'diamonds', 'spades', 'clubs'],
+  values: '2,3,4,5,6,7,8,9,10,J,Q,K,A',
+  initializeDeck() {
+    const {
+      suits,
+      values,
+      deck
+    } = this;
+    for (let value of values.split(',')) {
+      for (let suit of suits) {
+        deck.push({
+          value,
+          suit
+        })
+      }
+    }
+    // return deck;
+  },
+  drawCard() {
+    const card = this.deck.pop();
+    this.drawnCards.push(card);
+    return card;
+  },
+  drawMultiple(numCards) {
+    const cards = [];
+    for (let i = 0; i < numCards; i++) {
+      cards.push(this.drawCard());
+    }
+    return cards;
+  },
+  shuffle() {
+    const {
+      deck
+    } = this;
+    // loop over array backwards
+    for (let i = deck.length - 1; i > 0; i--) {
+      //pick random index before current element
+      let j = Math.floor(Math.random() * (i + 1));
+      //swap
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+  }
+}
+
+// Much cleaner!!
+coltDeck.initializeDeck();
+coltDeck.shuffle();
+const h1 = coltDeck.drawMultiple(2);
+const h2 = coltDeck.drawMultiple(2);
+const h3 = coltDeck.drawMultiple(5);
+
+
+//------------------------------------
+
+
+// **********************************
+// WRITING EVERYTHING USING FUNCTIONS
+// **********************************
+function initializeDeck() {
+  const deck = [];
+  const suits = ['hearts', 'diamonds', 'spades', 'clubs'];
+  const values = '2,3,4,5,6,7,8,9,10,J,Q,K,A';
+  for (let value of values.split(',')) {
+    for (let suit of suits) {
+      deck.push({
+        value,
+        suit
+      })
+    }
+  }
+  return deck;
+}
+
+function drawCardColt(deck, drawnCards) {
+  const card = deck.pop();
+  drawnCards.push(card);
+  return card;
+}
+
+function drawMultiple(numCards, deck, drawnCards) {
+  const cards = [];
+  for (let i = 0; i < numCards; i++) {
+    cards.push(drawCardColt(deck, drawnCards));
+  }
+  return cards;
+}
+
+function shuffle(deck) {
+  // loop over array backwards
+  for (let i = deck.length - 1; i > 0; i--) {
+    //pick random index before current element
+    let j = Math.floor(Math.random() * (i + 1));
+    //swap
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+}
+
+
+// We have to create a bunch of variables:
+const firstDeck = initializeDeck();
+const drawnCards = [];
+shuffle(firstDeck);
+// We have to pass a ton of arguments around:
+const hand1 = drawMultiple(2, firstDeck, drawnCards);
+const hand2 = drawMultiple(2, firstDeck, drawnCards);
+const pokerHand = drawMultiple(5, firstDeck, drawnCards);
+
+
+
 
 /*#########################################*/
 /* ======= 10. Creating A Deck Factory 03:31 ========= */
 /*#########################################*/
+
+
+/*#########################################*/
+/* ======= REDUCE MDN Practice ========= */
+/*#########################################*/
+let someNumsss = [1, 2, 3, 4, 5, 6, 7]
+let reducer = (acc, cur) => {
+  return acc + cur
+}
+
+let myResult = someNumsss.reduce(reducer)
+// console.log(myResult);
+
+
+
+//01
+let myArrObj = [{ x: 1 }, { x: 2 }, { x: 3 }]
+
+let sum = myArrObj.reduce(function (acc, cur) {
+  return acc + cur.x
+}, 0)
+
+// console.log(sum) // logs 6
+
+//02
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  function (acc, cur) {
+    // console.log(cur);
+    return acc.concat(cur)
+
+  },
+  []
+)
+// console.log(flattened);
+
+
+//03
+let namesOne = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']
+
+let countedNames = namesOne.reduce(function (allNames, name) {
+  if (name in allNames) {
+    allNames[name]++
+  }
+  else {
+    allNames[name] = 1
+  }
+  return allNames
+}, {})
+
+// console.log(countedNames);
+
+
+// another Random card practice
+const valuesOne = [
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
+  '9',
+  '10',
+  'J',
+  'Q',
+  'K',
+  'A'
+];
+const suitsOne = ['clubs', 'spades', 'hearts', 'diamonds'];
+
+
+
+let pickOneione = (arr) => {
+  let random = Math.floor(Math.random() * arr.length)
+  return random
+}
+
+let cardCreatorione = () => {
+  let cardR = pickOneione(valuesOne)
+  let suitR = pickOneione(suitsOne)
+  let card = valuesOne[cardR]
+  let suit = suitsOne[suitR]
+
+  return {
+    card, suit
+  }
+}
+
+
+
 
