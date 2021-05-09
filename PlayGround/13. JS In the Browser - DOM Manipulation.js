@@ -98,19 +98,29 @@ btn.addEventListener('click',() =>{
 
 
 
-console.clear()
 /*#############################################*/
 /* ======== 07. getElementsByTagName 07:16 ========= */
 /*#############################################*/
-let inputs = document.getElementsByTagName('input')
+
+/*
+  [
+    1. 'getElementsByTagName' gives us a 'HTMLcollection'.
+    2. HTMLcollection is not an actual array.
+    3. in HTMLcollection:
+        1. .length works
+        2. loop works
+        3. we can get the value with arr[index].
+    4. in HTMLcollection:
+        1. .pop() or array methods does not work 
+  ]
+*/
 
 
-console.log(inputs);
-
-for(let input of inputs) {
-  console.log(input);
+//this works in browser [type something in input and pass (not submit)]
+let myInputs = document.getElementsByTagName('input');
+for(let input of myInputs){
+  console.log(input.value);
 }
-
 
 
 
@@ -118,6 +128,26 @@ for(let input of inputs) {
 /* ======== 08. getElementsByClassName 05:17 ========= */
 /*#############################################*/
 
+// we've selected the FIRST ul from the document. then run the
+//method to get 'li'
+let myUL = document.getElementsByTagName('ul')[1]
+console.log(myUL);
+
+
+let myLi = myUL.getElementsByClassName('list')
+console.log(myLi);
+
+
+
+
 /*#############################################*/
 /* ======== 09. querySelector & querySelectorAll  10:57 ========= */
 /*#############################################*/
+
+
+//we can select just like the css selector
+let ulOne = document.querySelector('.list')
+console.log(ulOne);
+
+let ulTwo = document.querySelector('section .list')
+console.log(ulTwo);
