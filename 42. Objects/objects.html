@@ -32,12 +32,15 @@
 
     console.log(person)
 
-    // we can set props like this
+    // we can set props like this & re-assaign values
     person.jobStatus = null;
+    person.age = 250
 
+    // we can make a copy of an object AND make it [ immutable ],
+    //means, then we can't change the or assaign props in 'object copy'
 
-
-
+    let personFreeze = Object.freeze(person);
+    personFreeze.age = 50; // this will not work!!
 
 
 
