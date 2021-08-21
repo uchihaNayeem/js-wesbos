@@ -84,11 +84,11 @@
 
 
 
-let img = document.getElementById('coffee')
-console.dir(img);
+let img = document.getElementById('coffee') 
+console.dir(img); //proto: HTML paragraph element
 
-let p = document.querySelector('p')
-console.dir(p);
+let p = document.querySelector('p') 
+console.dir(p); ////proto: HTML Image element
 
 
 let btn = document.querySelector('button');
