@@ -12,7 +12,7 @@
     1. So Here is the dom.
     2. Dom is the thing which connects html n css
     3. dom gives us the interectivity in website.
-    4 hete is some link(showed by COLT) of forms, mind game, tabs of 
+    4 here is some link(showed by COLT) of forms, mind game, tabs of 
       form whichs has some nice interectivity done by js.
       [
         1. https://codepen.io/ehermanson/pen/KwKWEv
@@ -70,6 +70,9 @@
 /*
   [ [not imp]
     1. document is a object that holds bunch of property and methods
+    2. everything starts with document.
+    3. goto mdn website, open console. write: console.dir(document). you'll see
+       all the elements are turned in to an object :O
   ]
 */
 
