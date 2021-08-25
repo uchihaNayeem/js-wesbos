@@ -125,7 +125,7 @@
   }
 
 
-console.clear()
+
  /* ##################################################### */
  /* ========= Altering Styles  09:50 =========== */
  /*###################################################  */
@@ -148,7 +148,7 @@ console.clear()
 
   /* make every li diffrernt color */
   let thatLi = thatUl.children
-  let color = ['blue', 'green', 'yellow', 'pink', 'orchid', 'goldenrod', 'dodgerblue' ]
+  let color = ['blue', 'green', 'indigo', 'pink', 'orchid', 'goldenrod', 'dodgerblue', ]
   color.forEach((el, i) => {
     console.log(el, i)
     thatLi[i].style.color = el
@@ -170,56 +170,25 @@ thatLi.forEach((el, i)=>{
 
 
 
-  console.clear()
+
  /* ##################################################### */
  /* ========= getComputedStyle  06:11 =========== */
  /*###################################################  */
 
+ //added margin on the whole div
+document.querySelector('.getComputedStyle').style.marginTop = '10px';
 
 
+let anoH1 = document.querySelector('.getComputedStyle h1')
+anoH1.innerText = 'kiaktaobostha'
+anoH1.style.color = 'dodgerblue'
+anoH1.style.textAlign = 'center'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// awesome way to Get The Computed style WOW!!!
+let compH1 = getComputedStyle(anoH1)
+console.log(compH1.color)
+console.log(compH1.textAlign)
+console.log(compH1.fontSize)
 
 
 
@@ -227,10 +196,76 @@ thatLi.forEach((el, i)=>{
  /* ========= Manipulating Classes  10:34 =========== */
  /*###################################################  */
 
+//added margin on the whole div
+ document.querySelector('.manipulatingClasses').style.marginTop = '10px';
+
+//get all the li
+let myTodo = document.querySelectorAll('.todos .todo');
+
+
+//class added on click
+document.querySelectorAll('button')[0].addEventListener('click',()=>{
+  myTodo[0].classList.toggle('done')
+})
+document.querySelectorAll('button')[1].addEventListener('click',()=>{
+  myTodo[1].classList.toggle('done')
+})
+document.querySelectorAll('button')[2].addEventListener('click',()=>{
+  myTodo[2].classList.toggle('done')
+})
+document.querySelectorAll('button')[3].addEventListener('click',()=>{
+  myTodo[3].classList.toggle('done')
+})
+
+
+//css for the 'done' class
+/* 
+     .done {
+         color: gray;
+         opacity: 50%;
+         text-decoration: line-through;
+     }
+*/
+
+
+console.clear()
  /* ##################################################### */
  /* ========= Creating Elements  09:11 =========== */
  /*###################################################  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
  /* ##################################################### */
  /* ========= Append, Prepend, & insertBefore  09:57 =========== */
  /*###################################################  */
