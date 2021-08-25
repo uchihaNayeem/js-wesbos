@@ -89,7 +89,7 @@
   inputRange.setAttribute('step', '1000')
 
 
-  console.clear()
+
  /* ##################################################### */
  /* ===== Finding Parent/Children/Siblings  06:27 ======= */
  /*###################################################  */
@@ -109,40 +109,57 @@
   middleSibling.previousElementSibling
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
  /* ##################################################### */
  /* ========= Changing Multiple Elements  03:51 =========== */
  /*###################################################  */
 
+ let getTheDiv = document.querySelector('.changeMultiElement')
+
+  let arrOfLi = getTheDiv.children[0].children
+  
+  for(li of arrOfLi){
+    li.innerHTML = '<h1><em>ol<b>o</b>dama</em></h1>'
+    li.innerHTML += '<b>gedomazo</b>'
+    console.log(li.innerText)
+  }
+
+
+console.clear()
  /* ##################################################### */
  /* ========= Altering Styles  09:50 =========== */
  /*###################################################  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* ##################################################### */
  /* ========= getComputedStyle  06:11 =========== */
