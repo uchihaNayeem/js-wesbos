@@ -91,8 +91,50 @@
 
   console.clear()
  /* ##################################################### */
- /* ========= Finding Parent/Children/Siblings  06:27 =========== */
+ /* ===== Finding Parent/Children/Siblings  06:27 ======= */
  /*###################################################  */
+
+
+  let myUl = document.querySelector('.parentSiblingChild ul')
+
+  /* ul tag er parent and children */
+  myUl.parentElement.parentElement
+  myUl.children // gives an arr
+  
+  /* akta li select next and previous sibling ber korsi */
+  let liSibling = myUl.children[0]
+  liSibling.nextElementSibling;
+
+  let middleSibling = myUl.children[1]
+  middleSibling.previousElementSibling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* ##################################################### */
  /* ========= Changing Multiple Elements  03:51 =========== */
