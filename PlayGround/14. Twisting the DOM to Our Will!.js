@@ -131,39 +131,97 @@ console.clear()
  /*###################################################  */
 
 
+  let thatDiv= document.querySelector('.jsStyling');
+
+  //all element inside of it
+  thatDiv.children
+  let thatH1 = thatDiv.children[0]
+  let thatP = thatDiv.children[1]
+  let thatUl = thatDiv.children[2]
+
+  thatH1.style.color = 'orchid'
+  thatH1.style.fontSize = '40px'
+  thatH1.innerText = 'Hello Olodama'
+
+  thatP.style.color = 'white';
+  thatP.style.backgroundColor = 'black';
+
+  /* make every li diffrernt color */
+  let thatLi = thatUl.children
+  let color = ['blue', 'green', 'yellow', 'pink', 'orchid', 'goldenrod', 'dodgerblue' ]
+  color.forEach((el, i) => {
+    console.log(el, i)
+    thatLi[i].style.color = el
+  });
+
+/* My test */
+
+/*   
+// why loop doesn't work here??
+thatLi.forEach((el, i)=>{
+    console.log(el, i)
+  }) */
+
+  let myLion = document.querySelectorAll('.jsStyling ul li')
+  console.log(myLion)
+  myLion.forEach((el, i)=>{
+    console.log(el, i)
+  })
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  console.clear()
  /* ##################################################### */
  /* ========= getComputedStyle  06:11 =========== */
  /*###################################################  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* ##################################################### */
  /* ========= Manipulating Classes  10:34 =========== */
