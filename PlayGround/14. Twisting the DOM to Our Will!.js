@@ -26,49 +26,61 @@
   console.log(pOne.textContent)
 
 
-  console.clear()
+
  /* ##################################################### */
  /* ========= innerHTML  07:12 =========== */
  /*###################################################  */
- 
-  let form = document.querySelector('form');
-  console.log(form);
-  console.log(form.innerText)
-  console.log(form.innerHTML)
 
-  // 
+  let myForm = document.querySelector('form');
+  console.log(myForm);
+  console.log(myForm.innerText)
+  console.log(myForm.innerHTML)
 
+  let myH1 = document.querySelector('h1');
+  //include with current html/text use += 
+  myH1.innerHTML += "<span class='customColor'> !!!</span>"
+  myH1.innerText += "<b> !!! </b>" // it doresnot reconnize the HTML. put like a text;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
+  console.clear()
 
  /* ##################################################### */
  /* ========= value, src, href, and more  09:37 =========== */
  /*###################################################  */
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  /* ##################################################### */
  /* ========= Getting & Setting Attributes  03:30 =========== */
