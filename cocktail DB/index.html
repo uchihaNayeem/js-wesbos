@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Search Input -->
+    <div class="input-group mb-3 m-5 mx-auto w-50">
+        <input id="searchInput" type="text" class="form-control" placeholder="Search books name"
+            aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span onclick="searchInput()" class="input-group-text" id="basic-addon2">Book Search</span>
+    </div>
+    <!-- spinner -->
+    <div id="spinner" class="d-none">
+        <div class="spinnerBox ">
+            <div class="spinner"></div>
+            <h1 class="text-center">Loading...</h1>
+        </div>
+    </div>
+    <!-- spinner end -->
+    <!-- All BOOK Cards -->
+    <div class="container">
+        <div id='books' class="row row-cols-1 row-cols-md-4 g-4">
+        </div>
+    </div>
+    <!-- All BOOK Cards end -->
+    <!-- Search Input END -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
