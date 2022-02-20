@@ -214,13 +214,27 @@ let typeCheck  = typeof checkTwo
 
 console.log(typeof typeCheck) // 
 
+/*====================================*/
+/* ====== 12. parseInt & parseFloat.mp4 ===== */ 
+/*====================================*/
+
+// it converts a string to number
+let someBillRes = '120.22213';
 
 
+let letGetNum = parseInt(someBillRes);
+let letsGetNum = parseFloat(someBillRes);
+
+console.log(letGetNum, letsGetNum)
 
 
+//useCase 
 
+let amount = 500;
 
+console.log('total cost', amount - letsGetNum )
 
+/* PRACTICE DONE HERE */
 
 
 
