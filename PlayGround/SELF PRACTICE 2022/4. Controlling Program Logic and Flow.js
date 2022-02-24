@@ -37,7 +37,8 @@ console.log(87 < 85, 'false')
 /*====================================*/
 /* ====== 3. Double Equals (==) ====== */
 /*====================================*/
-console.log(`this is (0 == '') (empty string) gives -> ${(0 == '')} `); // true
+
+
 
 
 
@@ -63,31 +64,20 @@ console.log(`this is (0 == '') (empty string) gives -> ${(0 == '')} `); // true
 /* 7. ====== Else If ====== */
 /*====================================*/
 
+let rating = 2;
 
-let rating = 3;
-
-if (rating ){}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (rating >=3){
+    console.log('very good')
+}else if(rating>=2){
+    console.log('good')
+}else{
+    console.log('bad')
+}
 
 
 //FIND the number if it's ODD or EVEN 
-
-
+let testNumber = 13;
+let evaluate = (testNumber % 2 === 0) ?console.log('even',testNumber): console.log('odd',testNumber)
 
 
 
