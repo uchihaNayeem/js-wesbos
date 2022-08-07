@@ -27,7 +27,7 @@ console.log(78 < 78, 'false')
 console.log(65 < 19, 'false')
 console.log(31 < 35, 'true')
 console.log(87 < 85, 'false')
-console.log(87 < 85, 'false')
+
  
 /*====================================*/
 /* ====== 3. Double Equals (==) ====== */
